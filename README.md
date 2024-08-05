@@ -1,16 +1,23 @@
-## Hi there 👋
+<p align="center">
+  <a href="https://github.com/princeton-nlp/Llamao">
+    <img src="img/swellama_banner.png" width="50%" alt="swellama logo" />
+  </a>
+</p>
 
-<!--
-**multi-swe-bench/multi-swe-bench** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+# SWE-bench Website
 
-Here are some ideas to get you started:
+This repository contains the code for the website and leaderboard of the SWE-bench project.
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+To learn more about SWE-bench, please check out the main code [repository]() along with the main paper, [SWE-bench: Can Language Models Resolve Real-world Github Issues?]().
+
+If you found SWE-bench helpful for your work, please cite as follows:
+```
+@inproceedings{jimenez2023swebench,
+  title = {SWE-bench: Can Language Models Resolve Real-World GitHub Issues?},
+  author = {Jimenez, Carlos E. and Yang, John and Wettig, Alexander and Yao, Shunyu and Pei, Kexin and Press, Ofir and Narasimhan, Karthik},
+  booktitle = {ArXiv},
+  year = {2023},
+}
+```
+
+Our sincere thanks to Prof. Pranav Rajpurkar and the creators of the [SQuAD](https://rajpurkar.github.io/SQuAD-explorer/) dataset for allowing us to use their website template.
