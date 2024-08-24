@@ -6,12 +6,12 @@
     >
       <h1 style="font-size: 60px; padding-top: 0.4em">Submit to SWE-bench</h1>
       <div class="content-wrapper" style="margin-top: 2em">
-        <a href="index.html">
+        <router-link to="/">
           <button class="outline" style="flex-direction: row; display: flex; justify-content: center; align-items: center;">
             <img src="../img/logo.png" style="height: 1.3em; margin-right: 0.4em; margin-bottom: 0.3em;" />
             Home&nbsp;
           </button>
-        </a>
+        </router-link>
         <a href="https://arxiv.org/abs/2310.06770">
           <button class="outline">
             <i class="fa fa-paperclip"></i> Paper&nbsp;
@@ -22,11 +22,11 @@
             <i class="fab fa-github"></i> Code&nbsp;
           </button>
         </a>
-        <a href="viewer.html">
+        <router-link to="/viewer">
           <button class="outline">
             <i class="fa fa-chart-simple"></i> Analysis&nbsp;
           </button>
-        </a>
+        </router-link>
       </div>
     </div>
   </section>
