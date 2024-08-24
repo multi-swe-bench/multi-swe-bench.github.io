@@ -26,6 +26,9 @@ devDependencies:
   vue:
     specifier: ^3.4.35
     version: 3.4.38(typescript@5.5.4)
+  vue-router:
+    specifier: ^4.4.3
+    version: 4.4.3(vue@3.4.38)
 
 packages:
 
@@ -1269,6 +1272,10 @@ packages:
       '@vue/shared': 3.4.38
     dev: true
 
+  /@vue/devtools-api@6.6.3:
+    resolution: {integrity: sha512-0MiMsFma/HqA6g3KLKn+AGpL1kgKhFWszC9U29NfpWK5LE7bjeXxySWJrOJ77hBz+TBrBQ7o4QJqbPbqbs8rJw==}
+    dev: true
+
   /@vue/reactivity@3.4.38:
     resolution: {integrity: sha512-4vl4wMMVniLsSYYeldAKzbk72+D3hUnkw9z8lDeJacTxAkXeDAP1uE9xr2+aKIN0ipOL8EG2GPouVTH6yF7Gnw==}
     dependencies:
@@ -2038,6 +2045,15 @@ packages:
       sass: 1.77.8
     optionalDependencies:
       fsevents: 2.3.3
+    dev: true
+
+  /vue-router@4.4.3(vue@3.4.38):
+    resolution: {integrity: sha512-sv6wmNKx2j3aqJQDMxLFzs/u/mjA9Z5LCgy6BE0f7yFWMjrPLnS/sPNn8ARY/FXw6byV18EFutn5lTO6+UsV5A==}
+    peerDependencies:
+      vue: ^3.2.0
+    dependencies:
+      '@vue/devtools-api': 6.6.3
+      vue: 3.4.38(typescript@5.5.4)
     dev: true
 
   /vue@3.4.38(typescript@5.5.4):

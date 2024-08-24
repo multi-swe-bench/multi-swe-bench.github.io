@@ -110,7 +110,7 @@
           >
             <div class="download">
               <img
-                src="../img/swellama.png"
+                src="../img/logo.png"
                 style="height:1.3em;vertical-align: middle;margin-bottom:0.35em;margin-right:0.2em"
               />
               SWE-Llama 13b
@@ -122,7 +122,7 @@
           >
             <div class="download">
               <img
-                src="../img/swellama.png"
+                src="../img/logo.png"
                 style="height:1.3em;vertical-align: middle;margin-bottom:0.35em;margin-right:0.2em"
               />
               SWE-Llama 13b (PEFT)
@@ -136,7 +136,7 @@
           >
             <div class="download">
               <img
-                src="../img/swellama.png"
+                src="../img/logo.png"
                 style="height:1.3em;vertical-align: middle;margin-bottom:0.35em;margin-right:0.2em"
               />
               SWE-Llama 7b
@@ -148,7 +148,7 @@
           >
             <div class="download">
               <img
-                src="../img/swellama.png"
+                src="../img/logo.png"
                 style="height:1.3em;vertical-align: middle;margin-bottom:0.35em;margin-right:0.2em"
               />
               SWE-Llama 7b (PEFT)

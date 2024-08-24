@@ -14,7 +14,7 @@
       >
         <h1 style="font-size: 60px; padding-top: 0.4em">Multi-SWE-bench</h1>
         <img
-          src="../img/swellama.png"
+          src="../img/logo.png"
           style="height: 100px; padding-top: 0em; padding-left: 0.5em"
         />
       </div>
@@ -36,16 +36,16 @@
             <i class="fab fa-github"></i> <del>Code</del>&nbsp;
           </button>
         </a>
-        <a href="submit.html">
+        <router-link to="/submit">
           <button class="outline">
             <i class="fa fa-upload"></i> Submit&nbsp;
           </button>
-        </a>
-        <a href="viewer.html">
+        </router-link>
+        <router-link to="/viewer">
           <button class="outline">
             <i class="fa fa-chart-simple"></i> Analysis&nbsp;
           </button>
-        </a>
+        </router-link>
       </div>
     </div>
   </section>
