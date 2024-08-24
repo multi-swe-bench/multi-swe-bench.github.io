@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://multi-swe-bench.github.io">
-    <img src="img/logo.png" width="50%" alt="multi-swe-bench logo" />
+    <img src="img/logo.png" width="12%" alt="multi-swe-bench logo" />
   </a>
 </p>
 
