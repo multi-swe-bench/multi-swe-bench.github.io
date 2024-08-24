@@ -3,9 +3,9 @@
   <section class="main-container">
     <div class="content-wrapper" style="display: flex; justify-content: center; align-items: center;">
       <div style="background-color: black; padding: 1.5em 1em; color: white; border-radius: 1em; text-align: center; width: 80%;">
-        🔥 Evaluating on Multi-SWE-bench just became a lot more reliable!
-        Multi-SWE-bench evaluation now uses <b>Docker</b> for easier, containerized, reproducible evaluation.
-        [<a style="color:#0ca7ff" href="https://github.com/princeton-nlp/SWE-bench/tree/main/docs/20240627_docker">Report</a>]
+        🔥 We’ve released the JAVA version of SWE-bench! 
+        Check it out on <a style="color:#0ca7ff" href="https://huggingface.co/datasets/Daoguang/multi-swe-bench">Hugging Face</a>. 
+        For more details, see our <a style="color:#0ca7ff" href="https://www.baidu.com">paper</a>.
       </div>
     </div>
     <div class="content-wrapper">
@@ -80,16 +80,14 @@
           </table>
         </div>
         <p class="text-content">
-          - The <span style="color:#0ea7ff;"><b>% Resolved</b></span> metric refers to the percentage of SWE-bench instances (2294 total)
+          - The <span style="color:#0ea7ff;"><b>% Resolved</b></span> metric refers to the percentage of Multi-SWE-bench instances
           that were <i>resolved</i> by the model.
           <br>
-          - <span style="color:#0ea7ff;"><b>✅ Verified</b></span> indicates that we, the SWE-bench team, received access to the system and
+          - <span style="color:#0ea7ff;"><b>✅ Verified</b></span> indicates that we, the Multi-SWE-bench team, received access to the system and
           were able to reproduce the patch generations.
           <br>
           - <span style="color:#0ea7ff;"><b>🤠 Open</b></span> refers to submissions that have open-source code. This does <i>not</i>
           necessarily mean the underlying model is open-source.
-          <br>
-          - The leaderboard is updated once a week on <b>Monday</b>.
           <br>
           - If you would like to submit your model to the leaderboard, please check the <a href="submit.html">submission</a> page.
           <br>

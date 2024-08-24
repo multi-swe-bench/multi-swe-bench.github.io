@@ -29,12 +29,12 @@
       <div class="content-wrapper" style="margin-top: 2em">
         <a href="https://arxiv.org/abs/2310.06770">
           <button class="outline">
-            <i class="fa fa-paperclip"></i> <del>Paper</del>&nbsp;
+            <i class="fa fa-paperclip"></i> Paper&nbsp;
           </button>
         </a>
         <a href="https://github.com/multi-swe-bench/multi-swe-bench-env">
           <button class="outline">
-            <i class="fab fa-github"></i> <del>Code</del>&nbsp;
+            <i class="fab fa-github"></i> Code&nbsp;
           </button>
         </a>
         <router-link to="/submit">
