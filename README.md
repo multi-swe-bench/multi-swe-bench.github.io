@@ -12,11 +12,14 @@ To learn more about SWE-bench, please check out the main code [repository]() alo
 
 If you found SWE-bench helpful for your work, please cite as follows:
 ```
-@inproceedings{jimenez2023swebench,
-  title = {SWE-bench: Can Language Models Resolve Real-World GitHub Issues?},
-  author = {Jimenez, Carlos E. and Yang, John and Wettig, Alexander and Yao, Shunyu and Pei, Kexin and Press, Ofir and Narasimhan, Karthik},
-  booktitle = {ArXiv},
-  year = {2023},
+@misc{zan2024multiswebench,
+  title={SWE-bench-java: A GitHub Issue Resolving Benchmark in Java}, 
+  author={xxx},
+  year={2024},
+  eprint={2408.xxxxx},
+  archivePrefix={arXiv},
+  primaryClass={cs.CL},
+  url={https://arxiv.org/abs/2408.xxxxx}, 
 }
 ```
 

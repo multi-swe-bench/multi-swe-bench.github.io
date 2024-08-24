@@ -217,10 +217,6 @@ tr {
   text-align: center;
 }
 
-.content-table tbody td .number {
-  font-weight: bold;
-}
-
 .footer-container {
   background-color: var(--accent_color);
   padding: 0.75em 0;
@@ -290,52 +286,53 @@ tr {
   overflow-y: hidden;
   overflow-x: auto;
   display: block;
+  table-layout: fixed;
   width: 100%;
   border: 2px solid var(--accent_color);
   box-sizing: border-box;
 }
 
-.table {
+table {
   table-layout: fixed;
 }
 
-.table th, .table td {
+table th, table td {
   padding: 5px 10px;
 }
 
-.table thead {
+table thead {
   background-color: var(--even_line_color);
 }
 
-.table th {
+table th {
   text-align: left;
   position: sticky;
   top: 0;
   background-color: var(--even_line_color);
 }
 
-.table th:first-child {
+table th:first-child {
   border-top-left-radius: 7px;
 }
 
-.table th:last-child {
+table th:last-child {
   border-top-right-radius: 7px;
 }
 
-.table tr:nth-child(odd) { 
+table tr:nth-child(odd) { 
   background-color: var(--odd_line_color);
 }
 
-.table tr:nth-child(even) { 
+table tr:nth-child(even) { 
   background-color: var(--even_line_color);
 }
 
-.table th:not(:first-child), .table td:not(:first-child) {
+table th:not(:first-child), table td:not(:first-child) {
   min-width: fit-content;
   white-space: nowrap;
 }
 
-.table th:first-child, .table td:first-child {
+table th:first-child, table td:first-child {
   width: 100%;
 }
 
@@ -348,11 +345,11 @@ tr {
   border-bottom: 2px solid var(--accent_color);
 }
 
-.table th:first-child .sticky-header-content {
+table th:first-child .sticky-header-content {
   border-top-left-radius: 7px;
 }
 
-.table th:last-child .sticky-header-content {
+table th:last-child .sticky-header-content {
   border-top-right-radius: 7px;
 }
 
