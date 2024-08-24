@@ -52,7 +52,7 @@
                   {{ item.name }}
                 </td>
                 <td class="font-bold">
-                  {{ item.resolved }}
+                  {{ +item.resolved.toFixed(2) }}
                 </td>
                 <td>
                   <span class="label-date">{{ item.date }}</span>
@@ -106,7 +106,8 @@
 
 <script lang="ts" setup>
 
-import { ref, onMounted, computed } from 'vue'
+import { ref, computed } from 'vue'
+import { useLeaderboard } from './utils'
 import About from './About.vue'
 import Header from './Header.vue'
 import Resources from './Resources.vue'
@@ -114,30 +115,9 @@ import Resources from './Resources.vue'
 const language = ref('Java')
 const dataset = ref('Full')
 
-interface ListItem<T> {
-  name: string
-  data: T[]
-}
-
-interface Result {
-  oss: boolean
-  verified: boolean
-  name: string
-  resolved: number
-  date: string
-  logs: string
-  trajs: string
-  site: string
-}
-
-const leaderboard = ref<ListItem<ListItem<Result>>[]>()
+const leaderboard = useLeaderboard()
 const languageData = computed(() => leaderboard.value?.find(item => item.name === language.value).data)
 const datasetData = computed(() => languageData.value?.find(item => item.name === dataset.value).data)
-
-onMounted(async () => {
-  const response = await fetch('https://multi-swe-bench.github.io/experiments/leaderboard.json')
-  leaderboard.value = await response.json()
-})
 
 </script>
 

@@ -34,7 +34,7 @@ function updateTableByRepoHelper(data) {
 }
 
 function updateTableByRepo(split, model) {
-    const url = `https://raw.githubusercontent.com/swe-bench/experiments/main/evaluation/${split}/${model}/results/resolved_by_repo.json`;
+    const url = `https://raw.githubusercontent.com/multi-swe-bench/experiments/main/evaluation/${split}/${model}/results/resolved_by_repo.json`;
     fetch(url)
         .then(response => response.json())
         .then(data => {

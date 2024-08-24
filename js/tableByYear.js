@@ -39,7 +39,7 @@ function updateTableByYearHelper(data) {
 }
 
 function updateTableByYear(split, model) {
-    const url = `https://raw.githubusercontent.com/swe-bench/experiments/main/evaluation/${split}/${model}/results/resolved_by_time.json`;
+    const url = `https://raw.githubusercontent.com/multi-swe-bench/experiments/main/evaluation/${split}/${model}/results/resolved_by_time.json`;
     fetch(url)
         .then(response => response.json())
         .then(data => {

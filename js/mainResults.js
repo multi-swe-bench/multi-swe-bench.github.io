@@ -18,7 +18,7 @@ function updateLogViewer(inst_id, split, model) {
         logViewer.innerHTML = 'No instance selected.';
         return;
     }
-    const url = `https://raw.githubusercontent.com/swe-bench/experiments/main/evaluation/${split}/${model}/logs/${inst_id}.${model}.eval.log`;
+    const url = `https://raw.githubusercontent.com/multi-swe-bench/experiments/main/evaluation/${split}/${model}/logs/${inst_id}.${model}.eval.log`;
     fetch(url)
         .then(response => response.text())
         .then(data => {
@@ -92,7 +92,7 @@ function createTableBody(data, split, model, keys, table) {
 }
 
 function updateMainResults(split, model) {
-    const url = `https://raw.githubusercontent.com/swe-bench/experiments/main/evaluation/${split}/${model}/results/results.json`;
+    const url = `https://raw.githubusercontent.com/multi-swe-bench/experiments/main/evaluation/${split}/${model}/results/results.json`;
     fetch(url)
         .then(response => response.json())
         .then(data => {
