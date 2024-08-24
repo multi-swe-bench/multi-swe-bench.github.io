@@ -19,19 +19,20 @@
         />
       </div>
       <h3>A Multi-Lingual GitHub Issue Resolving Benchmark</h3>
-      <h3 style="font-size: 20px; padding-top: 1.2em"><del>ICLR 2024</del></h3>
-      <p style="text-align: center;margin-top:1em;"><del>
-        Carlos E. Jimenez*, John Yang*, <br />
-        Alexander Wettig, Shunyu Yao, Kexin Pei, <br />
-        Ofir Press, Karthik Narasimhan
-      </del></p>
+      <h3 style="font-size: 20px; padding-top: 1.2em">ArXiv 2024</h3>
+      <p style="text-align: center;margin-top:1em;">
+        Daoguang Zan*, Zhirong Huang*, Ailun Yu*, <br />
+        Shaoxin Lin, Yifan Shi, Wei Liu, Dong Chen, Zongshuai Qi, Hao Yu, Lei Yu, <br />
+        Dezhi Ran, Muhan Zeng, Bo Shen, Lin Li, Pan Bian, Guangtai Liang, Bei Guan, <br />
+        Pengjie Huang, Tao Xie, Yongji Wang, Fengjun Zhang, Qianxiang Wang
+      </p>
       <div class="content-wrapper" style="margin-top: 2em">
         <a href="https://arxiv.org/abs/2310.06770">
           <button class="outline">
             <i class="fa fa-paperclip"></i> <del>Paper</del>&nbsp;
           </button>
         </a>
-        <a href="https://github.com/princeton-nlp/SWE-bench">
+        <a href="https://github.com/multi-swe-bench/multi-swe-bench-env">
           <button class="outline">
             <i class="fab fa-github"></i> <del>Code</del>&nbsp;
           </button>
