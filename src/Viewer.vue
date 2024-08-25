@@ -33,7 +33,7 @@
   <section class="main-container">
     <div class="content-wrapper" style="display: flex; justify-content: center; align-items: center;">
       <div style="background-color: black; padding: 1.5em 1em; color: white; border-radius: 1em; text-align: center; width: 80%;">
-        Select the language, dataset, and model below to get automated analyses of the model's performance on Multi-SWE-bench.
+        Select the language&dataset&model below to get automated analyses of the model's performance on Multi-SWE-bench.
       </div>
     </div>
     <div class="mt-4 mb-6 flex flex-col gap-y-2">
