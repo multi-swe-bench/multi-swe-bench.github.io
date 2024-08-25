@@ -4,15 +4,14 @@
       <h2 class="text-title">Citation</h2>
       If you found <a href="https://www.swebench.com">SWE-bench</a> or our <a href="https://multi-swe-bench.github.io">Multi-SWE-bench</a> helpful for your work, please cite as follows:
       <p class="text-content">
-        <pre id="citation"><code>@misc{zan2024multiswebench,
-  title={SWE-bench-java: A GitHub Issue Resolving Benchmark for Java}, 
-  author={xxx},
-  year={2024},
-  eprint={2408.xxxxx},
-  archivePrefix={arXiv},
-  primaryClass={cs.CL},
-  url={https://arxiv.org/abs/2408.xxxxx}, 
+        <pre id="citation"><code>@inproceedings{jimenez2024swebench,
+    title={{SWE}-bench: Can Language Models Resolve Real-world Github Issues?},
+    author={Carlos E Jimenez and John Yang and Alexander Wettig and Shunyu Yao and Kexin Pei and Ofir Press and Karthik R Narasimhan},
+    booktitle={The Twelfth International Conference on Learning Representations},
+    year={2024},
+    url={https://openreview.net/forum?id=VTF8yNQM66}
 }</code>
+
 <code>@misc{zan2024multiswebench,
   title={SWE-bench-java: A GitHub Issue Resolving Benchmark for Java}, 
   author={xxx},
