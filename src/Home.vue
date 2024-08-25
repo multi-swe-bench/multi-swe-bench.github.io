@@ -2,9 +2,9 @@
   <Header></Header>
   <section class="main-container">
     <div class="content-wrapper" style="display: flex; justify-content: center; align-items: center;">
-      <div style="background-color: black; padding: 1.5em 1em; color: white; border-radius: 1em; text-align: center; width: 80%;">
-        📣 [08/25/2024] We’ve released the JAVA version of SWE-bench! 
-        Check it out on <a style="color:#0ca7ff" href="https://huggingface.co/datasets/Daoguang/multi-swe-bench">Hugging Face</a>. 
+      <div style="background-color: black; padding: 1.5em 1em; color: white; border-radius: 1em; text-align: center; width: 82%;">
+        📣 [08/2024] We’ve released the JAVA version of <a href="https://www.swebench.com">SWE-bench</a>!
+        Check it out on <a style="color:#0ca7ff" href="https://huggingface.co/datasets/Daoguang/multi-swe-bench">Hugging Face</a>.
         For more details, see our <a style="color:#0ca7ff" href="https://arxiv.org/abs/2310.06770">paper</a>.
       </div>
     </div>
