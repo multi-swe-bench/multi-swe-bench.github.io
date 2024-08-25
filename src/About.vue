@@ -12,7 +12,7 @@
     url={https://openreview.net/forum?id=VTF8yNQM66}
 }</code>
 </pre>
-<br/><br/>
+<br/>
 <pre id="citation">
 <code>@misc{zan2024multiswebench,
   title={SWE-bench-java: A GitHub Issue Resolving Benchmark for Java}, 
@@ -29,7 +29,7 @@
         We are not responsible for any damages caused by the use of
         Multi-SWE-bench, including but not limited to, any loss of profit, data,
         or use of data. 
-        <br/>
+        <br/><br/>
         <b>Acknowledgements:</b>This leaderboard is a modified version based on 
         <a href="https://github.com/swe-bench/swe-bench.github.io">the SWE-bench leaderboard</a>,
         and we express our deepest gratitude to the creators of the SWE-bench dataset.
