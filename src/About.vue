@@ -5,7 +5,7 @@
       If you found <a href="https://www.swebench.com">SWE-bench</a> or our <a href="https://multi-swe-bench.github.io">Multi-SWE-bench</a> helpful for your work, please cite as follows:
       <p class="text-content">
         <pre id="citation"><code>@inproceedings{jimenez2024swebench,
-    title={{SWE}-bench: Can Language Models Resolve Real-world Github Issues?},
+    title={SWE-bench: Can Language Models Resolve Real-world Github Issues?},
     author={Carlos E Jimenez and John Yang and Alexander Wettig and Shunyu Yao and Kexin Pei and Ofir Press and Karthik R Narasimhan},
     booktitle={The Twelfth International Conference on Learning Representations},
     year={2024},
