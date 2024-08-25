@@ -4,7 +4,7 @@
       class="content-wrapper title-wrapper"
       style="flex-direction: column;text-align: center;"
     >
-      <h1 style="font-size: 60px; padding-top: 0.4em">SWE-bench Analysis</h1>
+      <h1 style="font-size: 60px; padding-top: 0.4em">Multi-SWE-bench Analysis</h1>
       <div class="content-wrapper" style="margin-top: 2em">
         <router-link to="/">
           <button class="outline" style="flex-direction: row; display: flex; justify-content: center; align-items: center;">
@@ -17,7 +17,7 @@
             <i class="fa fa-paperclip"></i> Paper&nbsp;
           </button>
         </a>
-        <a href="https://github.com/princeton-nlp/SWE-bench">
+        <a href="https://github.com/multi-swe-bench/multi-swe-bench-env">
           <button class="outline">
             <i class="fab fa-github"></i> Code&nbsp;
           </button>
@@ -33,7 +33,7 @@
   <section class="main-container">
     <div class="content-wrapper" style="display: flex; justify-content: center; align-items: center;">
       <div style="background-color: black; padding: 1.5em 1em; color: white; border-radius: 1em; text-align: center; width: 80%;">
-        Select the split & model below to get automated analyses of the model's performance on the SWE-bench split.
+        Select the language, dataset, and model below to get automated analyses of the model's performance on Multi-SWE-bench.
       </div>
     </div>
     <div class="mt-4 mb-6 flex flex-col gap-y-2">

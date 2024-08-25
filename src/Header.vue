@@ -23,7 +23,7 @@
       <p style="text-align: center;margin-top:1em;">
         Daoguang Zan*, Zhirong Huang*, Ailun Yu*, <br />
         Shaoxin Lin, Yifan Shi, Wei Liu, Dong Chen, Zongshuai Qi, Hao Yu, Lei Yu, <br />
-        Dezhi Ran, Muhan Zeng, Bo Shen, Lin Li, Pan Bian, Guangtai Liang, Bei Guan, <br />
+        Dezhi Ran, Muhan Zeng, Bo Shen, Pan Bian, Guangtai Liang, Bei Guan, <br />
         Pengjie Huang, Tao Xie, Yongji Wang, Fengjun Zhang, Qianxiang Wang
       </p>
       <div class="content-wrapper" style="margin-top: 2em">
