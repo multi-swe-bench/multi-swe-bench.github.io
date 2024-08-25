@@ -12,6 +12,15 @@
   archivePrefix={arXiv},
   primaryClass={cs.CL},
   url={https://arxiv.org/abs/2408.xxxxx}, 
+}</code>
+<code>@misc{zan2024multiswebench,
+  title={SWE-bench-java: A GitHub Issue Resolving Benchmark for Java}, 
+  author={xxx},
+  year={2024},
+  eprint={2408.xxxxx},
+  archivePrefix={arXiv},
+  primaryClass={cs.CL},
+  url={https://arxiv.org/abs/2408.xxxxx}, 
 }</code></pre>
     <br/>
         <b>Disclaimer:</b> Multi-SWE-bench is for research purposes only. Models
