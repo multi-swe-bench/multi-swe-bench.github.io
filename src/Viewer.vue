@@ -131,8 +131,8 @@ const dataset = ref('Full')
 const model = ref('')
 const readme = ref('README.md not provided.')
 
-const languageData = computed(() => leaderboard.value?.find(item => item.name === language.value).data)
-const datasetData = computed(() => languageData.value?.find(item => item.name === dataset.value).data)
+const languageData = computed(() => leaderboard.value?.find(item => item.name === language.value)?.data)
+const datasetData = computed(() => languageData.value?.find(item => item.name === dataset.value)?.data)
 const data = computed(() => datasetData.value?.find(item => item.name === model.value))
 
 watch(data, async (data) => {

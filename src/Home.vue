@@ -114,8 +114,8 @@ const language = ref('Java')
 const dataset = ref('Full')
 
 const leaderboard = useLeaderboard()
-const languageData = computed(() => leaderboard.value?.find(item => item.name === language.value).data)
-const datasetData = computed(() => languageData.value?.find(item => item.name === dataset.value).data)
+const languageData = computed(() => leaderboard.value?.find(item => item.name === language.value)?.data)
+const datasetData = computed(() => languageData.value?.find(item => item.name === dataset.value)?.data)
 
 </script>
 
