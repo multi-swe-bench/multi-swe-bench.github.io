@@ -127,7 +127,7 @@ import markdown from 'marked-vue'
 const leaderboard = useLeaderboard()
 
 const language = ref('Java')
-const dataset = ref('Full')
+const dataset = ref('Verified')
 const model = ref('')
 const readme = ref('README.md not provided.')
 

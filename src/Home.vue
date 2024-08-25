@@ -111,7 +111,7 @@ import Header from './Header.vue'
 import Resources from './Resources.vue'
 
 const language = ref('Java')
-const dataset = ref('Full')
+const dataset = ref('Verified')
 
 const leaderboard = useLeaderboard()
 const languageData = computed(() => leaderboard.value?.find(item => item.name === language.value)?.data)
