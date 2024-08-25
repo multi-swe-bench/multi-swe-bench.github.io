@@ -19,7 +19,7 @@
   eprint={2408.xxxxx},
   archivePrefix={arXiv},
   primaryClass={cs.CL},
-  url={https://arxiv.org/abs/2408.xxxxx}, 
+  url={https://arxiv.org/abs/2408.xxxxx}
 }</code></pre>
     <br/>
         <b>Disclaimer:</b> Multi-SWE-bench is for research purposes only. Models
