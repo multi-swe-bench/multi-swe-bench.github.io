@@ -22,9 +22,9 @@
       <h3 style="font-size: 20px; padding-top: 1.2em">ArXiv 2024</h3>
       <p style="text-align: center;margin-top:1em;">
         Daoguang Zan*, Zhirong Huang*, Ailun Yu*, <br />
-        Shaoxin Lin, Yifan Shi, Wei Liu, Dong Chen, Zongshuai Qi, Hao Yu, Lei Yu, <br />
-        Dezhi Ran, Muhan Zeng, Bo Shen, Pan Bian, Guangtai Liang, Bei Guan, <br />
-        Pengjie Huang, Tao Xie, Yongji Wang, Fengjun Zhang, Qianxiang Wang
+        Shaoxin Lin, Yifan Shi, Wei Liu, Dong Chen, Zongshuai Qi, <br />
+        Hao Yu, Lei Yu, Dezhi Ran, Muhan Zeng, Bo Shen, Pan Bian, <br />
+        Guangtai Liang, Bei Guan, Pengjie Huang, Tao Xie, Yongji Wang, Qianxiang Wang
       </p>
       <div class="content-wrapper" style="margin-top: 2em">
         <a href="https://arxiv.org/abs/2310.06770">
