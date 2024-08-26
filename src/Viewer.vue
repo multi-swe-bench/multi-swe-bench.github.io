@@ -72,11 +72,11 @@
       </div>
     </div>
     <div class="content-wrapper">
-      <div v-if="model">
+      <div v-if="modelData">
         Viewing <span style="color:#0ca7ff">{{ model }}</span>'s performance
         on the Multi-SWE-bench <span style="color:#0ca7ff">{{ language }}</span> language and
         <span style="color:#0ca7ff">{{ dataset }}</span> split,
-        which resolved <span style="color:#0ca7ff" id="selectedResolved">{{ +data.resolved.toFixed(2) }}</span>% of
+        which resolved <span style="color:#0ca7ff" id="selectedResolved">{{ +modelData.resolved.toFixed(2) }}</span>% of
         <span style="color:#0ca7ff" id="selectedSplitNum"></span> issues.
         (<a :href="`https://github.com/multi-swe-bench/experiments/tree/main/evaluation/${language}/${dataset}/${model}`">Logs</a>)
       </div>
@@ -124,18 +124,11 @@ import { computed, ref, watch } from 'vue'
 import { useLeaderboard } from './utils'
 import markdown from 'marked-vue'
 
-const leaderboard = useLeaderboard()
+const { leaderboard, languageData, datasetData, modelData, language, dataset, model } = useLeaderboard()
 
-const language = ref('Java')
-const dataset = ref('Verified')
-const model = ref('')
 const readme = ref('README.md not provided.')
 
-const languageData = computed(() => leaderboard.value?.find(item => item.name === language.value)?.data)
-const datasetData = computed(() => languageData.value?.find(item => item.name === dataset.value)?.data)
-const data = computed(() => datasetData.value?.find(item => item.name === model.value))
-
-watch(data, async (data) => {
+watch(modelData, async (data) => {
   if (!data) return readme.value = 'README.md not provided.'
   readme.value = 'Loading README.md...'
   const url = `https://raw.githubusercontent.com/multi-swe-bench/experiments/main/evaluation/${language.value}/${dataset.value}/${model.value}/README.md`

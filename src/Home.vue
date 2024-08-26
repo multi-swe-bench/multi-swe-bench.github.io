@@ -110,12 +110,7 @@ import About from './About.vue'
 import Header from './Header.vue'
 import Resources from './Resources.vue'
 
-const language = ref('Java')
-const dataset = ref('Verified')
-
-const leaderboard = useLeaderboard()
-const languageData = computed(() => leaderboard.value?.find(item => item.name === language.value)?.data)
-const datasetData = computed(() => languageData.value?.find(item => item.name === dataset.value)?.data)
+const { leaderboard, languageData, datasetData, language, dataset } = useLeaderboard()
 
 </script>
 
