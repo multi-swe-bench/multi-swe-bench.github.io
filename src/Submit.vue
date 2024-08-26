@@ -8,7 +8,7 @@
       <div class="content-wrapper" style="margin-top: 2em">
         <router-link to="/">
           <button class="outline" style="flex-direction: row; display: flex; justify-content: center; align-items: center;">
-            <img src="../img/logo.png" style="height: 1.3em; margin-right: 0.4em; margin-bottom: 0.3em;" />
+            <img src="/logo.png" style="height: 1.3em; margin-right: 0.4em; margin-bottom: 0.3em;" />
             Home&nbsp;
           </button>
         </router-link>
