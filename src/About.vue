@@ -25,10 +25,10 @@
 }</code></pre>
     <br/>
         <b>Disclaimer:</b> Multi-SWE-bench is for research purposes only. Models
-        trained and evaluated on Multi-SWE-bench can produce unexpected results.
+        evaluated on Multi-SWE-bench may produce unexpected results.
         We are not responsible for any damages caused by the use of
         Multi-SWE-bench, including but not limited to, any loss of profit, data,
-        or use of data. 
+        or use of data.
         <br/><br/>
         <b>Acknowledgements:</b>This leaderboard is a modified version based on 
         <a href="https://github.com/swe-bench/swe-bench.github.io">the SWE-bench leaderboard</a>,
