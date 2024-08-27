@@ -5,7 +5,7 @@ interface ListItem<T> {
   data: T[]
 }
 
-interface Result {
+export interface Result {
   oss: boolean
   verified: boolean
   name: string

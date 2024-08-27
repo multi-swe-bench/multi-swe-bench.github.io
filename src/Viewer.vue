@@ -12,12 +12,12 @@
             Home&nbsp;
           </button>
         </router-link>
-        <a href="https://arxiv.org/abs/2408.14354">
+        <a target="_blank" rel="noopener noreferrer" href="https://arxiv.org/abs/2408.14354">
           <button class="outline">
             <i class="fa fa-paperclip"></i> Paper&nbsp;
           </button>
         </a>
-        <a href="https://github.com/multi-swe-bench/multi-swe-bench-env">
+        <a target="_blank" rel="noopener noreferrer" href="https://github.com/multi-swe-bench/multi-swe-bench-env">
           <button class="outline">
             <i class="fab fa-github"></i> Code&nbsp;
           </button>
@@ -75,7 +75,9 @@
         <span style="color:#0ca7ff">{{ dataset }}</span> split,
         which resolved <span style="color:#0ca7ff" id="selectedResolved">{{ +(modelData.resolved * 100 / total).toFixed(2) }}</span>% of
         <span style="color:#0ca7ff">{{ total }}</span> issues.
-        (<a :href="`https://github.com/multi-swe-bench/experiments/tree/main/evaluation/${language}/${dataset}/${model}`">Logs</a>)
+        <template v-if="modelData.hasLogs">
+          (<a target="_blank" rel="noopener noreferrer" :href="`https://github.com/multi-swe-bench/experiments/tree/main/evaluation/${modelData.path}/logs`">Logs</a>)
+        </template>
       </div>
     </div>
     <div class="content-wrapper">
@@ -118,14 +120,18 @@
 <script lang="ts" setup>
 
 import { computed, ref, watch } from 'vue'
-import { useLeaderboard } from './utils'
+import { useLeaderboard, Result } from './utils'
 import markdown from 'marked-vue'
 
 const { leaderboard, languageData, datasetData, modelData, language, dataset, model, total } = useLeaderboard()
 
 const readme = ref('README.md not provided.')
 
-watch(modelData, async (data) => {
+watch(modelData, (data) => {
+  updateReadme(data)
+})
+
+async function updateReadme(data: Result) {
   if (!data?.hasReadme) return readme.value = 'README.md not provided.'
   readme.value = 'Loading README.md...'
   const url = `https://raw.githubusercontent.com/multi-swe-bench/experiments/main/evaluation/${data.path}/README.md`
@@ -135,17 +141,6 @@ watch(modelData, async (data) => {
   } else {
     readme.value = 'README.md not provided.'
   }
-})
-
-// document.getElementById('loadData').addEventListener('click', () => {
-//     document.getElementById('selectedModel').textContent = modelValue;
-//     document.getElementById('selectedSplitNum').textContent = splitValue == 'lite' ? 300 : 2294;
-//     document.getElementById('modelSplitURL').href = `https://github.com/multi-swe-bench/experiments/tree/main/evaluation/${splitValue}/${modelValue}`;
-
-//     updateMainResults(language.value, dataset.value, model.value);
-//     updateReadme(language.value, dataset.value, model.value);
-//     updateTableByRepo(language.value, dataset.value, model.value);
-//     updateTableByYear(language.value, dataset.value, model.value);
-// });
+}
 
 </script>

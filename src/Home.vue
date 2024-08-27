@@ -3,9 +3,9 @@
   <section class="main-container">
     <div class="content-wrapper" style="display: flex; justify-content: center; align-items: center;">
       <div style="background-color: black; padding: 1.5em 1em; color: white; border-radius: 1em; text-align: center; width: 82%;">
-        📣 [08/2024] We’ve released the JAVA version of <a style="color:#0ca7ff" href="https://www.swebench.com">SWE-bench</a>!
-        Check it out on <a style="color:#0ca7ff" href="https://huggingface.co/datasets/Daoguang/multi-swe-bench">Hugging Face</a>.
-        For more details, see our <a style="color:#0ca7ff" href="https://arxiv.org/abs/2408.14354">paper</a>.
+        📣 [08/2024] We’ve released the JAVA version of <a rel="noopener noreferrer" target="_blank" style="color:#0ca7ff" href="https://www.swebench.com">SWE-bench</a>!
+        Check it out on <a target="_blank" rel="noopener noreferrer" style="color:#0ca7ff" href="https://huggingface.co/datasets/Daoguang/multi-swe-bench">Hugging Face</a>.
+        For more details, see our <a target="_blank" rel="noopener noreferrer" style="color:#0ca7ff" href="https://arxiv.org/abs/2408.14354">paper</a>.
       </div>
     </div>
     <div class="content-wrapper">
@@ -59,19 +59,19 @@
                 </td>
                 <td class="text-center">
                   <template v-if="item.hasLogs">
-                    <a :href="`${GITHUB_URL}/${item.path}/logs`">🔗</a>
+                    <a target="_blank" rel="noopener noreferrer" :href="`${GITHUB_URL}/${item.path}/logs`">🔗</a>
                   </template>
                   <template v-else> - </template>
                 </td>
                 <td class="text-center">
                   <template v-if="item.hasTrajs">
-                    <a :href="`${GITHUB_URL}/${item.path}/trajs`">🔗</a>
+                    <a target="_blank" rel="noopener noreferrer" :href="`${GITHUB_URL}/${item.path}/trajs`">🔗</a>
                   </template>
                   <template v-else> - </template>
                 </td>
                 <td class="text-center">
                   <template v-if="item.site">
-                    <a :href="item.site">🔗</a>
+                    <a target="_blank" rel="noopener noreferrer" :href="item.site">🔗</a>
                   </template>
                   <template v-else> - </template>
                 </td>
@@ -89,7 +89,7 @@
           - <span style="color:#0ea7ff;"><b>🤠 Open</b></span> refers to submissions that have open-source code. This does <i>not</i>
           necessarily mean the underlying model is open-source.
           <br>
-          - If you would like to submit your model to the leaderboard, please check the <a href="submit.html">submission</a> page.
+          - If you would like to submit your model to the leaderboard, please check the <router-link to="/submit">submission</router-link> page.
           <br>
           - All submissions are Pass@1, do not use
           <code style="color:black;background-color:#ddd;border-radius: 0.25em">hints_text</code>,

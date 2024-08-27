@@ -12,12 +12,12 @@
             Home&nbsp;
           </button>
         </router-link>
-        <a href="https://arxiv.org/abs/2408.14354">
+        <a target="_blank" rel="noopener noreferrer" href="https://arxiv.org/abs/2408.14354">
           <button class="outline">
             <i class="fa fa-paperclip"></i> Paper&nbsp;
           </button>
         </a>
-        <a href="https://github.com/multi-swe-bench/multi-swe-bench-env">
+        <a target="_blank" rel="noopener noreferrer" href="https://github.com/multi-swe-bench/multi-swe-bench-env">
           <button class="outline">
             <i class="fab fa-github"></i> Code&nbsp;
           </button>
@@ -34,7 +34,7 @@
     <div class="content-wrapper" style="display: flex; justify-content: center; align-items: center;">
       <div style="background-color: black; padding: 1.5em 1em; color: white; border-radius: 1em; text-align: center; width: 80%;">
         All official submissions to the Multi-SWE-bench leaderboard are maintained at
-        <a href="https://github.com/multi-swe-bench/experiments" class="light-blue-link" target="_blank" rel="noopener noreferrer">
+        <a target="_blank" rel="noopener noreferrer" href="https://github.com/multi-swe-bench/experiments" class="light-blue-link">
           <i class="fab fa-github"></i> multi-swe-bench/experiments
         </a>
       </div>
@@ -45,10 +45,10 @@
           Submit to Multi-SWE-bench Leaderboard
         </h3>
         <p>
-          If you are interested in submitting your model to the <a href="https://multi-swe-bench.github.io">Multi-SWE-bench Leaderboard</a>, please do the following:
+          If you are interested in submitting your model to the <router-link to="/">Multi-SWE-bench Leaderboard</router-link>, please do the following:
         </p>
         <ol>
-          <li>Fork the <a href="https://github.com/multi-swe-bench/experiments">Multi-SWE-bench/experiments</a> repository.</li>
+          <li>Fork the <a target="_blank" rel="noopener noreferrer" href="https://github.com/multi-swe-bench/experiments">Multi-SWE-bench/experiments</a> repository.</li>
           <li>Clone the repository. Due to this repository's large diff history, consider using `git clone --depth 1` if cloning takes too long.</li>
           <li>Under the split that you evaluate on (<code>evaluation/java/verified/</code> or <code>evaluation/go/verified</code>), create a new folder with the submission date and the model name (e.g. <code>20240825_SWE-agent_deepseek-coder-v2</code>).</li>
           <li>Within the folder, please include the following files:
@@ -78,7 +78,7 @@
                 <li>Submit one reasoning trace per task instance. The reasoning trace should show all of the steps your system took while solving the task. If your system outputs thoughts or comments during operation, they should be included as well.</li>
                 <li>The reasoning trace can be represented with any text based file format (e.g. <code>md</code>, <code>json</code>, <code>yaml</code>)</li>
                 <li>Ensure the task instance ID is in the name of the corresponding reasoning trace file.</li>
-                <li>For an example, see <a href="https://github.com/multi-swe-bench/experiments/tree/main/evaluation/java/verified/20240825_SWE-agent_deepseek-coder-v2/trajs">SWE-agent + deepseek-coder-v2</a></li>
+                <li>For an example, see <a target="_blank" rel="noopener noreferrer" href="https://github.com/multi-swe-bench/experiments/tree/main/evaluation/java/verified/20240825_SWE-agent_deepseek-coder-v2/trajs">SWE-agent + deepseek-coder-v2</a></li>
               </ul>
               <li><code>README.md</code>: Include anything you'd like to share about your model here!</li>
             </ul>
@@ -87,7 +87,7 @@
           <li>Create a pull request to the `multi-swe-bench/experiments` repository with the new folder.</li>
         </ol>
         <p>
-          You can refer to this <a href="https://github.com/multi-swe-bench/multi-swe-bench-env">tutorial</a> for a quick overview of how to evaluate your model on Multi-SWE-bench.
+          You can refer to this <a target="_blank" rel="noopener noreferrer" href="https://github.com/multi-swe-bench/multi-swe-bench-env">tutorial</a> for a quick overview of how to evaluate your model on Multi-SWE-bench.
         </p>        
       </div>
     </div>
@@ -101,7 +101,7 @@
           Please note that we consider an eligible submission to the Multi-SWE-bench leaderboard to satisfy these criteria:
         </p>
         <ol>
-          <li>The use of the <code>hints_text</code> field is <i>not</i> allowed. See the explanation <a href="https://github.com/princeton-nlp/SWE-bench/issues/133">here</a>.</li>
+          <li>The use of the <code>hints_text</code> field is <i>not</i> allowed. See the explanation <a target="_blank" rel="noopener noreferrer" href="https://github.com/princeton-nlp/SWE-bench/issues/133">here</a>.</li>
           <li>The result should be pass@1. There should be one execution log per task instance for all task instances.</li>
           <li>The result should <i>not</i> be in the "Oracle" retrieval setting. The agent cannot be told the correct files to edit, where "correct" refers to the files modified by the reference solution patch.</li>
         </ol>
@@ -160,7 +160,7 @@
         </p>
         <p>
           A simple solution to this? When running inference, simply log the intermediate output generated by your system.
-          For an example, see <a href="https://github.com/swe-bench/experiments/tree/main/evaluation/lite/20240402_sweagent_gpt4/logs">SWE-agent + GPT-4 Turbo Trajectories</a>.
+          For an example, see <a target="_blank" rel="noopener noreferrer" href="https://github.com/swe-bench/experiments/tree/main/evaluation/lite/20240402_sweagent_gpt4/logs">SWE-agent + GPT-4 Turbo Trajectories</a>.
           In short, our requirements for what a reasoning trace should specific look like are non-specific.
           We trust you to provide a detailed account of how your system solved the task instance.
         </p>
