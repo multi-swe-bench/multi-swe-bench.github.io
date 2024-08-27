@@ -52,7 +52,7 @@
                   {{ item.name }}
                 </td>
                 <td class="font-bold">
-                  {{ +item.resolved.toFixed(2) }}
+                  {{ +(item.resolved * 100 / total).toFixed(2) }}
                 </td>
                 <td>
                   <span class="label-date">{{ item.date }}</span>
@@ -104,13 +104,12 @@
 
 <script lang="ts" setup>
 
-import { ref, computed } from 'vue'
 import { useLeaderboard } from './utils'
 import About from './About.vue'
 import Header from './Header.vue'
 import Resources from './Resources.vue'
 
-const { leaderboard, languageData, datasetData, language, dataset } = useLeaderboard()
+const { leaderboard, languageData, datasetData, language, dataset, total } = useLeaderboard()
 
 const GITHUB_URL = 'https://github.com/multi-swe-bench/experiments/tree/main/evaluation'
 

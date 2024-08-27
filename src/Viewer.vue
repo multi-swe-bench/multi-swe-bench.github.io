@@ -73,8 +73,8 @@
         Viewing <span style="color:#0ca7ff">{{ model }}</span>'s performance
         on the Multi-SWE-bench <span style="color:#0ca7ff">{{ language }}</span> language and
         <span style="color:#0ca7ff">{{ dataset }}</span> split,
-        which resolved <span style="color:#0ca7ff" id="selectedResolved">{{ +modelData.resolved.toFixed(2) }}</span>% of
-        <span style="color:#0ca7ff" id="selectedSplitNum"></span> issues.
+        which resolved <span style="color:#0ca7ff" id="selectedResolved">{{ +(modelData.resolved * 100 / total).toFixed(2) }}</span>% of
+        <span style="color:#0ca7ff">{{ total }}</span> issues.
         (<a :href="`https://github.com/multi-swe-bench/experiments/tree/main/evaluation/${language}/${dataset}/${model}`">Logs</a>)
       </div>
     </div>
@@ -121,7 +121,7 @@ import { computed, ref, watch } from 'vue'
 import { useLeaderboard } from './utils'
 import markdown from 'marked-vue'
 
-const { leaderboard, languageData, datasetData, modelData, language, dataset, model } = useLeaderboard()
+const { leaderboard, languageData, datasetData, modelData, language, dataset, model, total } = useLeaderboard()
 
 const readme = ref('README.md not provided.')
 

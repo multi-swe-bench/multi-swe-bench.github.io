@@ -21,7 +21,7 @@ interface Result {
 }
 
 export function useLeaderboard() {
-  const leaderboard = ref<ListItem<ListItem<Result>>[]>()
+  const leaderboard = ref<ListItem<ListItem<Result> & { total: number }>[]>()
 
   const language = ref<string>()
   const dataset = ref<string>()
@@ -29,6 +29,7 @@ export function useLeaderboard() {
 
   const languageData = computed(() => leaderboard.value?.find(item => item.name === language.value)?.data)
   const datasetData = computed(() => languageData.value?.find(item => item.name === dataset.value)?.data)
+  const total = computed(() => languageData.value?.find(item => item.name === dataset.value)?.total)
   const modelData = computed(() => datasetData.value?.find(item => item.name === model.value))
 
   watch(leaderboard, (items) => {
@@ -48,5 +49,5 @@ export function useLeaderboard() {
     leaderboard.value = await response.json()
   })
 
-  return { leaderboard, language, dataset, model, languageData, datasetData, modelData }
+  return { leaderboard, language, dataset, model, languageData, datasetData, modelData, total }
 }
