@@ -50,13 +50,13 @@
         <ol>
           <li>Fork the <a href="https://github.com/multi-swe-bench/experiments">Multi-SWE-bench/experiments</a> repository.</li>
           <li>Clone the repository. Due to this repository's large diff history, consider using `git clone --depth 1` if cloning takes too long.</li>
-          <li>Under the split that you evaluate on (<code>evaluation/java/verified/</code> or <code>evaluation/go/verified</code>), create a new folder with the submission date and the model name (e.g. <code>20240825_sweagent_gpt4</code>).</li>
+          <li>Under the split that you evaluate on (<code>evaluation/java/verified/</code> or <code>evaluation/go/verified</code>), create a new folder with the submission date and the model name (e.g. <code>20240825_SWE-agent_deepseek-coder-v2</code>).</li>
           <li>Within the folder, please include the following files:
             <ul>
               <li><code>all_preds.jsonl</code>: Model predictions</li>
               <li><code>logs/</code>: Multi-SWE-bench evaluation artifacts dump</li>
               <ul>
-                <li>Eval. artifacts means 91 (verified) folders. Each folder (e.g. <code>astropy__astropy-1234</code>) contains:</li>
+                <li>Eval. artifacts means 91 (verified) folders. Each folder (e.g. <code>apache__dubbo-10638</code>) contains:</li>
                 <ul>
                     <li><code>eval.sh</code>: The evaluation script</li>
                     <li><code>patch.diff</code>: The model's generated prediction</li>
@@ -78,19 +78,20 @@
                 <li>Submit one reasoning trace per task instance. The reasoning trace should show all of the steps your system took while solving the task. If your system outputs thoughts or comments during operation, they should be included as well.</li>
                 <li>The reasoning trace can be represented with any text based file format (e.g. <code>md</code>, <code>json</code>, <code>yaml</code>)</li>
                 <li>Ensure the task instance ID is in the name of the corresponding reasoning trace file.</li>
-                <li>For an example, see <a href="https://github.com/swe-bench/experiments/tree/main/evaluation/lite/20240402_sweagent_gpt4/logs">SWE-agent + GPT 4 Turbo</a></li>
+                <li>For an example, see <a href="https://github.com/multi-swe-bench/experiments/tree/main/evaluation/java/verified/20240825_SWE-agent_deepseek-coder-v2/trajs">SWE-agent + deepseek-coder-v2</a></li>
               </ul>
               <li><code>README.md</code>: Include anything you'd like to share about your model here!</li>
             </ul>
           </li>
           <li>Run <code>python -m analysis.get_results evaluation/&lt;split&gt;/&lt;date + model&gt;</code></li>
-          <li>Create a pull request to the multi-swe-bench/experiments repository with the new folder.</li>
+          <li>Create a pull request to the `multi-swe-bench/experiments` repository with the new folder.</li>
         </ol>
         <p>
           You can refer to this <a href="https://github.com/multi-swe-bench/multi-swe-bench-env">tutorial</a> for a quick overview of how to evaluate your model on Multi-SWE-bench.
         </p>        
       </div>
     </div>
+    <!--
     <div class="content-wrapper">
       <div class="content-box">
         <h3>
@@ -106,6 +107,7 @@
         </ol>
       </div>
     </div>
+    -->
     
     <!--
     <div class="content-wrapper">
@@ -181,7 +183,7 @@
         <ol>
           <li>Create a <code>trajs/</code> folder in your submission directory.</li>
           <li>Within this folder, upload a reasoning trace per task instance that your system generated a prediction for.</li>
-          <li>Make sure the naming convention of the reasoning trace file reflects the SWE-bench task instance it corresponds to. (e.g. <code>astropy__astropy-1234.md</code>)</li>
+          <li>Make sure the naming convention of the reasoning trace file reflects the SWE-bench task instance it corresponds to. (e.g. <code>apache__dubbo-10638.md</code>)</li>
         </ol>
         <p>
           We will review the reasoning traces you submit.
