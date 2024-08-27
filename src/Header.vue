@@ -27,7 +27,7 @@
         Guangtai Liang, Bei Guan, Pengjie Huang, Tao Xie, Yongji Wang, Qianxiang Wang
       </p>
       <div class="content-wrapper" style="margin-top: 2em">
-        <a href="https://arxiv.org/abs/2310.06770">
+        <a href="https://arxiv.org/abs/2408.14354">
           <button class="outline">
             <i class="fa fa-paperclip"></i> Paper&nbsp;
           </button>

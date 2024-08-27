@@ -14,14 +14,14 @@
 </pre>
 <br/>
 <pre id="citation">
-<code>@misc{zan2024multiswebench,
+<code>@misc{zan2024swebenchjava,
   title={SWE-bench-java: A GitHub Issue Resolving Benchmark for Java}, 
-  author={xxx},
+  author={Daoguang Zan and Zhirong Huang and Ailun Yu and Shaoxin Lin and Yifan Shi and Wei Liu and Dong Chen and Zongshuai Qi and Hao Yu and Lei Yu and Dezhi Ran and Muhan Zeng and Bo Shen and Pan Bian and Guangtai Liang and Bei Guan and Pengjie Huang and Tao Xie and Yongji Wang and Qianxiang Wang},
   year={2024},
-  eprint={2408.xxxxx},
+  eprint={2408.14354},
   archivePrefix={arXiv},
-  primaryClass={cs.CL},
-  url={https://arxiv.org/abs/2408.xxxxx}
+  primaryClass={cs.SE},
+  url={https://arxiv.org/abs/2408.14354}, 
 }</code></pre>
     <br/>
         <b>Disclaimer:</b> Multi-SWE-bench is for research purposes only. Models

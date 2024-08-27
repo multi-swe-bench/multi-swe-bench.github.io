@@ -12,7 +12,7 @@ To learn more about Multi-SWE-bench, please check out the main code [repository]
 
 ## 📄 Citation
 
-If you found [SWE-bench](https://arxiv.org/abs/2310.06770) or [Multi-SWE-bench]() helpful for your work, please cite as follows:
+If you found [SWE-bench](https://arxiv.org/abs/2310.06770) or [Multi-SWE-bench](https://arxiv.org/abs/2408.14354) helpful for your work, please cite as follows:
 
 ```
 @inproceedings{jimenez2024swebench,
@@ -25,14 +25,14 @@ If you found [SWE-bench](https://arxiv.org/abs/2310.06770) or [Multi-SWE-bench](
 ```
 
 ```
-@misc{zan2024multiswebench,
-  title={{SWE}-bench-java: A GitHub Issue Resolving Benchmark in Java}, 
-  author={xxx},
-  year={2024},
-  eprint={2408.xxxxx},
-  archivePrefix={arXiv},
-  primaryClass={cs.CL},
-  url={https://arxiv.org/abs/2408.xxxxx}, 
+@misc{zan2024swebenchjava,
+      title={SWE-bench-java: A GitHub Issue Resolving Benchmark for Java}, 
+      author={Daoguang Zan and Zhirong Huang and Ailun Yu and Shaoxin Lin and Yifan Shi and Wei Liu and Dong Chen and Zongshuai Qi and Hao Yu and Lei Yu and Dezhi Ran and Muhan Zeng and Bo Shen and Pan Bian and Guangtai Liang and Bei Guan and Pengjie Huang and Tao Xie and Yongji Wang and Qianxiang Wang},
+      year={2024},
+      eprint={2408.14354},
+      archivePrefix={arXiv},
+      primaryClass={cs.SE},
+      url={https://arxiv.org/abs/2408.14354}, 
 }
 ```
 

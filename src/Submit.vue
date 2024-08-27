@@ -12,7 +12,7 @@
             Home&nbsp;
           </button>
         </router-link>
-        <a href="https://arxiv.org/abs/2310.06770">
+        <a href="https://arxiv.org/abs/2408.14354">
           <button class="outline">
             <i class="fa fa-paperclip"></i> Paper&nbsp;
           </button>
