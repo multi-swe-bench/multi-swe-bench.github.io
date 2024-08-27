@@ -29,7 +29,7 @@
             <button>{{ name }}</button>
           </li>
         </ul>
-        <div class="tabcontent tabcontentall" style="display: block" v-if="datasetData">
+        <div class="tabcontent tabcontentall block" v-if="datasetResults">
           <table class="scrollable">
             <thead>
               <tr>
@@ -42,7 +42,7 @@
               </tr>
             </thead>
             <tbody>
-              <tr v-for="(item, index) of datasetData">
+              <tr v-for="(item, index) of datasetResults">
                 <td>
                   <template v-if="index === 0">🥇 </template>
                   <template v-else-if="index === 1">🥈 </template>
@@ -109,7 +109,7 @@ import About from './About.vue'
 import Header from './Header.vue'
 import Resources from './Resources.vue'
 
-const { leaderboard, languageData, datasetData, language, dataset, total } = useLeaderboard()
+const { leaderboard, languageData, datasetResults, language, dataset, total } = useLeaderboard()
 
 const GITHUB_URL = 'https://github.com/multi-swe-bench/experiments/tree/main/evaluation'
 

@@ -20,8 +20,24 @@ export interface Result {
   hasTrajs: boolean
 }
 
+interface Item {
+  repository: string
+  time: string
+}
+
+interface Dataset {
+  name: string
+  results: Result[]
+  data: Record<string, Item>
+}
+
+interface Language {
+  name: string
+  data?: Dataset[]
+}
+
 export function useLeaderboard() {
-  const leaderboard = ref<ListItem<ListItem<Result> & { total: number }>[]>()
+  const leaderboard = ref<Language[]>()
 
   const language = ref<string>()
   const dataset = ref<string>()
@@ -29,8 +45,9 @@ export function useLeaderboard() {
 
   const languageData = computed(() => leaderboard.value?.find(item => item.name === language.value)?.data)
   const datasetData = computed(() => languageData.value?.find(item => item.name === dataset.value)?.data)
-  const total = computed(() => languageData.value?.find(item => item.name === dataset.value)?.total)
-  const modelData = computed(() => datasetData.value?.find(item => item.name === model.value))
+  const datasetResults = computed(() => languageData.value?.find(item => item.name === dataset.value)?.results)
+  const total = computed(() => Object.keys(languageData.value?.find(item => item.name === dataset.value)?.data || {}).length)
+  const modelData = computed(() => datasetResults.value?.find(item => item.name === model.value))
 
   watch(leaderboard, (items) => {
     language.value = items?.[0]?.name
@@ -40,7 +57,7 @@ export function useLeaderboard() {
     dataset.value = items?.[0]?.name
   })
 
-  watch(datasetData, (items) => {
+  watch(datasetResults, (items) => {
     model.value = items?.[0]?.name
   })
 
@@ -49,5 +66,5 @@ export function useLeaderboard() {
     leaderboard.value = await response.json()
   })
 
-  return { leaderboard, language, dataset, model, languageData, datasetData, modelData, total }
+  return { leaderboard, language, dataset, model, languageData, datasetData, datasetResults, modelData, total }
 }
