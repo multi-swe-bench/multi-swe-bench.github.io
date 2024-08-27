@@ -67,9 +67,6 @@
           </select>
         </div>
       </div>
-      <div class="text-center mt-2">
-        <button id="loadData">Load Data</button>
-      </div>
     </div>
     <div class="content-wrapper">
       <div v-if="modelData">
@@ -129,9 +126,9 @@ const { leaderboard, languageData, datasetData, modelData, language, dataset, mo
 const readme = ref('README.md not provided.')
 
 watch(modelData, async (data) => {
-  if (!data) return readme.value = 'README.md not provided.'
+  if (!data?.hasReadme) return readme.value = 'README.md not provided.'
   readme.value = 'Loading README.md...'
-  const url = `https://raw.githubusercontent.com/multi-swe-bench/experiments/main/evaluation/${language.value}/${dataset.value}/${model.value}/README.md`
+  const url = `https://raw.githubusercontent.com/multi-swe-bench/experiments/main/evaluation/${data.path}/README.md`
   const response = await fetch(url)
   if (response.ok) {
     readme.value = await response.text()

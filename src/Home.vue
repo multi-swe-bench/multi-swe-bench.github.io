@@ -58,14 +58,14 @@
                   <span class="label-date">{{ item.date }}</span>
                 </td>
                 <td class="text-center">
-                  <template v-if="item.logs">
-                    <a :href="item.logs">🔗</a>
+                  <template v-if="item.hasLogs">
+                    <a :href="`${GITHUB_URL}/${item.path}/logs`">🔗</a>
                   </template>
                   <template v-else> - </template>
                 </td>
                 <td class="text-center">
-                  <template v-if="item.trajs">
-                    <a :href="item.trajs">🔗</a>
+                  <template v-if="item.hasTrajs">
+                    <a :href="`${GITHUB_URL}/${item.path}/trajs`">🔗</a>
                   </template>
                   <template v-else> - </template>
                 </td>
@@ -111,6 +111,8 @@ import Header from './Header.vue'
 import Resources from './Resources.vue'
 
 const { leaderboard, languageData, datasetData, language, dataset } = useLeaderboard()
+
+const GITHUB_URL = 'https://github.com/multi-swe-bench/experiments/tree/main/evaluation'
 
 </script>
 

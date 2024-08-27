@@ -14,6 +14,10 @@ interface Result {
   logs: string
   trajs: string
   site: string
+  path: string
+  hasReadme: boolean
+  hasLogs: boolean
+  hasTrajs: boolean
 }
 
 export function useLeaderboard() {
