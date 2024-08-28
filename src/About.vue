@@ -30,9 +30,9 @@
         Multi-SWE-bench, including but not limited to, any loss of profit, data,
         or use of data.
         <br/><br/>
-        <b>Acknowledgements:</b>This leaderboard is a modified version based on 
-        <a href="https://github.com/swe-bench/swe-bench.github.io">the SWE-bench leaderboard</a>,
-        and we express our deepest gratitude to the creators of the SWE-bench dataset.
+        <b>Acknowledgements:</b>This leaderboard is a modified version based on the <a href="https://swebench.com">SWE-bench leaderboard</a>,
+        and we are using this template with the explicit permission of the SWE-bench team. 
+        We express our deepest gratitude to the creators of the SWE-bench dataset.
       </p>
       <p class="text-content">
         Correspondence to: <a href="mailto:daoguang@iscas.ac.cn">daoguang@iscas.ac.cn</a>
