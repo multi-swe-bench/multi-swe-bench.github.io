@@ -1,5 +1,5 @@
 <template>
-  <section style="background-color: var(--iscas_color)">
+  <section style="background-color: var(--dark_accent_color)">
     <div
       class="content-wrapper title-wrapper"
       style="flex-direction: column"
