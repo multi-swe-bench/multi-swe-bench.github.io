@@ -3,9 +3,9 @@
   <section class="main-container">
     <div class="content-wrapper" style="display: flex; justify-content: center; align-items: center;">
       <div style="background-color: black; padding: 1.5em 1em; color: white; border-radius: 1em; text-align: center; width: 82%;">
-        📣 [08/2024] We’ve released the JAVA version of <a rel="noopener noreferrer" target="_blank" style="color:#0ca7ff" href="https://www.swebench.com">SWE-bench</a>!
-        Check it out on <a target="_blank" rel="noopener noreferrer" style="color:#0ca7ff" href="https://huggingface.co/datasets/Daoguang/multi-swe-bench">Hugging Face</a>.
-        For more details, see our <a target="_blank" rel="noopener noreferrer" style="color:#0ca7ff" href="https://arxiv.org/abs/2408.14354">paper</a>.
+        📣 [08/2024] We’ve released the JAVA version of <a rel="noopener noreferrer" target="_blank" style="color:#ea5c29" href="https://www.swebench.com">SWE-bench</a>!
+        Check it out on <a target="_blank" rel="noopener noreferrer" style="color:#ea5c29" href="https://huggingface.co/datasets/Daoguang/multi-swe-bench">Hugging Face</a>.
+        For more details, see our <a target="_blank" rel="noopener noreferrer" style="color:#ea5c29" href="https://arxiv.org/abs/2408.14354">paper</a>.
       </div>
     </div>
     <div class="content-wrapper">
@@ -80,13 +80,13 @@
           </table>
         </div>
         <p class="text-content">
-          - The <span style="color:#0ea7ff;"><b>% Resolved</b></span> metric refers to the percentage of Multi-SWE-bench instances
+          - The <span style="color:#ea5c29;"><b>% Resolved</b></span> metric refers to the percentage of Multi-SWE-bench instances
           that were <i>resolved</i> by the model.
           <br>
-          - <span style="color:#0ea7ff;"><b>✅ Verified</b></span> indicates that we, the Multi-SWE-bench team, received access to the system and
+          - <span style="color:#ea5c29;"><b>✅ Verified</b></span> indicates that we, the Multi-SWE-bench team, received access to the system and
           were able to reproduce the patch generations.
           <br>
-          - <span style="color:#0ea7ff;"><b>🤠 Open</b></span> refers to submissions that have open-source code. This does <i>not</i>
+          - <span style="color:#ea5c29;"><b>🤠 Open</b></span> refers to submissions that have open-source code. This does <i>not</i>
           necessarily mean the underlying model is open-source.
           <br>
           - If you would like to submit your model to the leaderboard, please check the <router-link to="/submit">submission</router-link> page.
