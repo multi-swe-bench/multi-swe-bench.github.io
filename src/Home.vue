@@ -22,9 +22,9 @@
         </ul>
         <ul class="tab" v-if="languageData">
           <li
-            v-for="{ name, data } in languageData"
+            v-for="{ name, results } in languageData"
             :key="name"
-            :class="{ active: name === dataset, disabled: !data?.length }"
+            :class="{ active: name === dataset, disabled: !results?.length }"
             @click="dataset = name">
             <button>{{ name }}</button>
           </li>
