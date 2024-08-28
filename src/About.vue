@@ -36,9 +36,8 @@
       </p>
       <p class="text-content">
         Correspondence to: <a href="mailto:daoguang@iscas.ac.cn">daoguang@iscas.ac.cn</a>
-      </p>
-      <p class="text-content">
-        If you're interested, feel free to join our discussions on Discord: <a href="https://discord.gg/HEU3gvyXUf">https://discord.gg/HEU3gvyXUf</a>
+        <br/>
+        If you're interested, feel free to join our discussions on <a href="https://discord.gg/HEU3gvyXUf">Discord</a>.
       </p>
       <div class="content-wrapper" style="display: flex; flex-direction: row;">
         <a href="http://www.is.cas.cn" title="中国科学院软件研究所">
