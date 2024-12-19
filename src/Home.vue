@@ -81,6 +81,7 @@
         </div>
 
       <h2 class="text-title">Visual-Leaderboard</h2>
+        <h3>Number of Items: {{ visual_leaderboard.length }}</h3>
         <ul class="tab">
           <li
             v-for="{ name, data } in visual_leaderboard"
