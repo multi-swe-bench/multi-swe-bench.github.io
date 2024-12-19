@@ -9,6 +9,78 @@
       </div>
     </div>
     <div class="content-wrapper">
+
+      <div class="content-box" v-if="visual_leaderboard">
+        <h2 class="text-title">Visual_Leaderboard</h2>
+        <ul class="tab">
+          <li
+            v-for="{ name, data } in visual_leaderboard"
+            :key="name"
+            :class="{ active: name === visual_language, disabled: !data?.length }"
+            @click="visual_language = name">
+            <button>{{ name }}</button>
+          </li>
+        </ul>
+        <ul class="tab" v-if="visual_languageData">
+          <li
+            v-for="{ name, results } in visual_languageData"
+            :key="name"
+            :class="{ active: name === dataset, disabled: !results?.length }"
+            @click="dataset = name">
+            <button>{{ name }}</button>
+          </li>
+        </ul>
+        <div class="tabcontent tabcontentall block" v-if="visual_datasetResults">
+          <table class="scrollable">
+            <thead>
+              <tr>
+                <th><div class="sticky-header-content">Model</div></th>
+                <th><div class="sticky-header-content">% Resolved</div></th>
+                <th><div class="sticky-header-content">Date</div></th>
+                <th><div class="sticky-header-content">Logs</div></th>
+                <th><div class="sticky-header-content">Trajs</div></th>
+                <th><div class="sticky-header-content">Site</div></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="(item, index) of visual_datasetResults">
+                <td>
+                  <template v-if="index === 0">🥇 </template>
+                  <template v-else-if="index === 1">🥈 </template>
+                  <template v-else-if="index === 2">🥉 </template>
+                  <template v-if="item.oss">🤠 </template>
+                  <template v-if="item.verified">✅ </template>
+                  {{ item.name }}
+                </td>
+                <td class="font-bold">
+                  {{ +(item.resolved * 100 / total).toFixed(2) }}
+                </td>
+                <td>
+                  <span class="label-date">{{ item.date }}</span>
+                </td>
+                <td class="text-center">
+                  <template v-if="item.hasLogs">
+                    <a target="_blank" rel="noopener noreferrer" :href="`${GITHUB_URL}/${item.path}/logs`">🔗</a>
+                  </template>
+                  <template v-else> - </template>
+                </td>
+                <td class="text-center">
+                  <template v-if="item.hasTrajs">
+                    <a target="_blank" rel="noopener noreferrer" :href="`${GITHUB_URL}/${item.path}/trajs`">🔗</a>
+                  </template>
+                  <template v-else> - </template>
+                </td>
+                <td class="text-center">
+                  <template v-if="item.site">
+                    <a target="_blank" rel="noopener noreferrer" :href="item.site">🔗</a>
+                  </template>
+                  <template v-else> - </template>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      
       <div class="content-box" v-if="leaderboard">
         <h2 class="text-title">Leaderboard</h2>
         <ul class="tab">
@@ -104,13 +176,13 @@
 
 <script lang="ts" setup>
 
-import { useLeaderboard } from './utils'
+import { useLeaderboard,useVisualLeaderboard } from './utils'
 import About from './About.vue'
 import Header from './Header.vue'
 import Resources from './Resources.vue'
 
 const { leaderboard, languageData, datasetResults, language, dataset, total } = useLeaderboard()
-
+const { visual_leaderboard, visual_languageData, visual_datasetResults, visual_language, visual_dataset, visual_total } = useVisualLeaderboard()
 const GITHUB_URL = 'https://github.com/multi-swe-bench/experiments/tree/main/evaluation'
 
 </script>
