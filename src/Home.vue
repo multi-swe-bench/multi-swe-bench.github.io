@@ -8,10 +8,9 @@
         For more details, see our <a target="_blank" rel="noopener noreferrer" style="color:var(--dark_accent_color)" href="https://arxiv.org/abs/2408.14354">paper</a>.
       </div>
     </div>
-    <div class="content-wrapper">
-
-      <div class="content-box" v-if="visual_leaderboard">
-        <h2 class="text-title">Visual_Leaderboard</h2>
+    <div class="content-wrapper"> 
+      <div class="content-box" v-if="leaderboard">
+     <h2 class="text-title">Visual_Leaderboard</h2>
         <ul class="tab">
           <li
             v-for="{ name, data } in visual_leaderboard"
@@ -80,8 +79,7 @@
             </tbody>
           </table>
         </div>
-      
-      <div class="content-box" v-if="leaderboard">
+        
         <h2 class="text-title">Leaderboard</h2>
         <ul class="tab">
           <li
