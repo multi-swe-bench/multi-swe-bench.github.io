@@ -97,7 +97,19 @@ export function useVisualLeaderboard() {
   onMounted(async () => {
     const response = await fetch('https://multi-swe-bench.github.io/experiments/Visual_leaderboard.json')
     leaderboard.value = await response.json()
+        // 在这里打印各个值
+    console.log('leaderboard:', leaderboard.value);
   })
-
+  console.log('Returning values:', {
+    leaderboard: leaderboard.value,
+    language: language.value,
+    dataset: dataset.value,
+    model: model.value,
+    languageData: languageData.value,
+    datasetData: datasetData.value,
+    datasetResults: datasetResults.value,
+    modelData: modelData.value,
+    total: total.value
+  });
   return { leaderboard, language, dataset, model, languageData, datasetData, datasetResults, modelData, total }
 }
