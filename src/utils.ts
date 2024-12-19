@@ -95,8 +95,12 @@ export function useVisualLeaderboard() {
   })
 
   onMounted(async () => {
-    const response = await fetch('https://multi-swe-bench.github.io/experiments/Visual_leaderboard.json')
-    leaderboard.value = await response.json()
+    try {
+      const response = await fetch('https://multi-swe-bench.github.io/experiments/Visual_leaderboard.json')
+      leaderboard.value = await response.json()
+    } catch (error) {
+      console.error('Error fetching leaderboard data:', error)
+    }
   })
   
   return { leaderboard, language, dataset, model, languageData, datasetData, datasetResults, modelData, total }
