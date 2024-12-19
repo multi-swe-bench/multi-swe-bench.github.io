@@ -10,6 +10,77 @@
     </div>
     <div class="content-wrapper"> 
       <div class="content-box" v-if="leaderboard">
+
+        <h2 class="text-title">Leaderboard</h2>
+        <ul class="tab">
+          <li
+            v-for="{ name, data } in leaderboard"
+            :key="name"
+            :class="{ active: name === language, disabled: !data?.length }"
+            @click="language = name">
+            <button>{{ name }}</button>
+          </li>
+        </ul>
+        <ul class="tab" v-if="languageData">
+          <li
+            v-for="{ name, results } in languageData"
+            :key="name"
+            :class="{ active: name === dataset, disabled: !results?.length }"
+            @click="dataset = name">
+            <button>{{ name }}</button>
+          </li>
+        </ul>
+        <div class="tabcontent tabcontentall block" v-if="datasetResults">
+          <table class="scrollable">
+            <thead>
+              <tr>
+                <th><div class="sticky-header-content">Model</div></th>
+                <th><div class="sticky-header-content">% Resolved</div></th>
+                <th><div class="sticky-header-content">Date</div></th>
+                <th><div class="sticky-header-content">Logs</div></th>
+                <th><div class="sticky-header-content">Trajs</div></th>
+                <th><div class="sticky-header-content">Site</div></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="(item, index) of datasetResults">
+                <td>
+                  <template v-if="index === 0">🥇 </template>
+                  <template v-else-if="index === 1">🥈 </template>
+                  <template v-else-if="index === 2">🥉 </template>
+                  <template v-if="item.oss">🤠 </template>
+                  <template v-if="item.verified">✅ </template>
+                  {{ item.name }}
+                </td>
+                <td class="font-bold">
+                  {{ +(item.resolved * 100 / total).toFixed(2) }}
+                </td>
+                <td>
+                  <span class="label-date">{{ item.date }}</span>
+                </td>
+                <td class="text-center">
+                  <template v-if="item.hasLogs">
+                    <a target="_blank" rel="noopener noreferrer" :href="`${GITHUB_URL}/${item.path}/logs`">🔗</a>
+                  </template>
+                  <template v-else> - </template>
+                </td>
+                <td class="text-center">
+                  <template v-if="item.hasTrajs">
+                    <a target="_blank" rel="noopener noreferrer" :href="`${GITHUB_URL}/${item.path}/trajs`">🔗</a>
+                  </template>
+                  <template v-else> - </template>
+                </td>
+                <td class="text-center">
+                  <template v-if="item.site">
+                    <a target="_blank" rel="noopener noreferrer" :href="item.site">🔗</a>
+                  </template>
+                  <template v-else> - </template>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        
         <h2 class="text-title">Leaderboard</h2>
         <ul class="tab">
           <li
