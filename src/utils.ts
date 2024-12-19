@@ -94,23 +94,10 @@ export function useVisualLeaderboard() {
     model.value = items?.[0]?.name
   })
 
-  // onMounted(async () => {
-  //   const response = await fetch('https://multi-swe-bench.github.io/experiments/Visual_leaderboard.json')
-  //   leaderboard.value = await response.json()
-  // })
-  function loadLeaderboardData() {
-    return fetch('https://multi-swe-bench.github.io/experiments/Visual_leaderboard.json')
-      .then(response => response.json())
-      .then(data => {
-        leaderboard.value = data;
-      });
-  }
-
-  onMounted(() => {
-    loadLeaderboardData().catch(error => {
-      console.error('Error loading leaderboard data:', error);
-    });
-  });
+  onMounted(async () => {
+    const response = await fetch('https://multi-swe-bench.github.io/experiments/Visual_leaderboard.json')
+    leaderboard.value = await response.json()
+  })
   
   return { leaderboard, language, dataset, model, languageData, datasetData, datasetResults, modelData, total }
 }
