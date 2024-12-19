@@ -94,22 +94,20 @@ export function useVisualLeaderboard() {
     model.value = items?.[0]?.name
   })
 
-  onMounted(async () => {
-    const response = await fetch('https://multi-swe-bench.github.io/experiments/Visual_leaderboard.json')
-    leaderboard.value = await response.json()
-        // 在这里打印各个值
-    console.log('leaderboard:', leaderboard.value);
-      console.log('Returning values:', {
-    leaderboard: leaderboard.value,
-    language: language.value,
-    dataset: dataset.value,
-    model: model.value,
-    languageData: languageData.value,
-    datasetData: datasetData.value,
-    datasetResults: datasetResults.value,
-    modelData: modelData.value,
-    total: total.value
-  });
-  })
+  // onMounted(async () => {
+  //   const response = await fetch('https://multi-swe-bench.github.io/experiments/Visual_leaderboard.json')
+  //   leaderboard.value = await response.json()
+  // })
+  onMounted(() => {
+  fetch('https://multi-swe-bench.github.io/experiments/Visual_leaderboard.json')
+    .then(response => response.json())
+    .then(data => {
+      leaderboard.value = data;
+      // 在这里你可以处理其他逻辑，因为数据已经加载完成
+    })
+    .catch(error => {
+      console.error('Error loading leaderboard data:', error);
+    });
+})
   return { leaderboard, language, dataset, model, languageData, datasetData, datasetResults, modelData, total }
 }
