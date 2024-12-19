@@ -99,8 +99,7 @@ export function useVisualLeaderboard() {
     leaderboard.value = await response.json()
         // 在这里打印各个值
     console.log('leaderboard:', leaderboard.value);
-  })
-  console.log('Returning values:', {
+      console.log('Returning values:', {
     leaderboard: leaderboard.value,
     language: language.value,
     dataset: dataset.value,
@@ -111,5 +110,6 @@ export function useVisualLeaderboard() {
     modelData: modelData.value,
     total: total.value
   });
+  })
   return { leaderboard, language, dataset, model, languageData, datasetData, datasetResults, modelData, total }
 }
