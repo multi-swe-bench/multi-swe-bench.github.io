@@ -9,7 +9,7 @@
       </div>
     </div>
     <div class="content-wrapper"> 
-      <div class="content-box" v-if="leaderboard && visual_leaderboard"> 
+      <div class="content-box" v-if="leaderboard"> 
         <h2 class="text-title">Leaderboard</h2>
         <ul class="tab">
           <li
