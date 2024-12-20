@@ -122,7 +122,7 @@
                   {{ item.name }}
                 </td>
                 <td class="font-bold">
-                  {{ +(item.resolved * 100 / total).toFixed(2) }}
+                  {{ +(item.resolved * 100 / visual_total).toFixed(2) }}
                 </td>
                 <td>
                   <span class="label-date">{{ item.date }}</span>
