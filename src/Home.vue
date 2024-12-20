@@ -85,8 +85,8 @@
           <li
             v-for="{ name, data } in visual_leaderboard"
             :key="name"
-            :class="{ active: name === language, disabled: !data?.length }"
-            @click="language = name">
+            :class="{ active: name === visual_language, disabled: !data?.length }"
+            @click="visual_language = name">
             <button>{{ name }}</button>
           </li>
         </ul>
