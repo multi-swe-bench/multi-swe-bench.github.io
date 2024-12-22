@@ -19,15 +19,58 @@
         />
       </div>
       <h3>A Multi-Lingual GitHub Issue Resolving Benchmark</h3>
-      <h3 style="font-size: 20px; padding-top: 1.2em">ArXiv 2024</h3>
-      <p style="text-align: center;margin-top:1em;">
+      <!--<h3 style="font-size: 20px; padding-top: 1.2em">ArXiv 2024</h3>-->
+          <!-- <p style="text-align: center;margin-top:1em;">
         Daoguang Zan*, Zhirong Huang*, Ailun Yu*, <br />
         Shaoxin Lin, Yifan Shi, Wei Liu, Dong Chen, Zongshuai Qi, <br />
         Hao Yu, Lei Yu, Dezhi Ran, Muhan Zeng, Bo Shen, Pan Bian, <br />
         Guangtai Liang, Bei Guan, Pengjie Huang, Tao Xie, Yongji Wang, Qianxiang Wang
-      </p>
+      </p>-->
       <div class="content-wrapper" style="margin-top: 2em">
+
+    <!-- Paper-->
+    <div class="dropdown-wrapper">
+      <a href="https://arxiv.org/abs/2408.14354">
+        <button class="outline">
+          <i class="fa fa-paperclip"></i> Paper&nbsp;
+        </button>
+      </a>
+      <div class="dropdown-content">
         <a href="https://arxiv.org/abs/2408.14354">
+          <button class="outline" style="font-size: 12pt; height: 1.5em; width: 9em;border: 0px;">
+            <i class="fa fa-paperclip"></i> Textual-Java
+          </button>
+        </a>
+        <a href="https://arxiv.org/abs/2408.14354">
+          <button class="outline" style="font-size: 12pt; height: 1.5em; width: 9em;border: 0px;">
+            <i class="fa fa-paperclip"></i> Visual-Python
+          </button>
+        </a>
+      </div>
+    </div>
+
+    <!-- Code -->
+    <div class="dropdown-wrapper">
+      <a href="https://github.com/multi-swe-bench/multi-swe-bench-env">
+        <button class="outline">
+          <i class="fab fa-github"></i> Code&nbsp;
+        </button>
+      </a>
+      <div class="dropdown-content">
+        <a href="https://github.com/multi-swe-bench/multi-swe-bench-env">
+          <button class="outline" style="font-size: 12pt; height: 1.5em; width: 9em;outline: 3px solid #87CEFA;">
+            <i class="fab fa-github"></i> Textual-Java
+          </button>
+        </a>
+        <a href="https://github.com/multi-swe-bench/multi-swe-bench-env">
+          <button class="outline" style="font-size: 12pt; height: 1.5em; width: 9em;outline: 3px solid #87CEFA;">
+            <i class="fab fa-github"></i> Visual-Python
+          </button>
+        </a>
+      </div>
+    </div>
+        
+<!--       <a href="https://arxiv.org/abs/2408.14354">
           <button class="outline">
             <i class="fa fa-paperclip"></i> Paper&nbsp;
           </button>
@@ -36,7 +79,7 @@
           <button class="outline">
             <i class="fab fa-github"></i> Code&nbsp;
           </button>
-        </a>
+        </a>  -->
         <router-link to="/submit">
           <button class="outline">
             <i class="fa fa-upload"></i> Submit&nbsp;
