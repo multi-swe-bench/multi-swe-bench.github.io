@@ -196,6 +196,36 @@ button {
     }
 }
 
+.dropdown-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0.3em;
+    z-index: 10;
+    gap: 0.1em;
+}
+
+.dropdown-wrapper:hover .dropdown-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.dropdown-content a {
+    margin: 0;
+    padding: 0;
+}
+
+.dropdown-content button {
+    width: 100%;
+    text-align: center;
+    height: 75%;
+}
+
 .tabcontent {
   display: none;
   border-top: none;
