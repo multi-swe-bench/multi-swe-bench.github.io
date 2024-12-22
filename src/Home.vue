@@ -8,9 +8,18 @@
         For more details, see our <a target="_blank" rel="noopener noreferrer" style="color:var(--dark_accent_color)" href="https://arxiv.org/abs/2408.14354">paper</a>.
       </div>
     </div>
-    <div class="content-wrapper"> 
-      <div class="content-box" v-if="leaderboard"> 
+    <div class="content-wrapper">
+      <div class="content-box" v-if="leaderboard">
         <h2 class="text-title">Leaderboard</h2>
+        <ul class="tab">
+          <li
+            v-for="{ name, data } in allLeaderboards"
+            :key="name"
+            :class="{ active: name === selectedCategory, disabled: !data?.length }"
+            @click="selectedCategory = name">
+            <button>{{ name }}</button>
+          </li>
+        </ul>
         <ul class="tab">
           <li
             v-for="{ name, data } in leaderboard"
@@ -80,7 +89,7 @@
           </table>
         </div>
 
-      <h2 class="text-title">Visual-Leaderboard</h2>
+        <!-- <h2 class="text-title">Visual-Leaderboard</h2>
         <ul class="tab">
           <li
             v-for="{ name, data } in visual_leaderboard"
@@ -148,8 +157,8 @@
               </tr>
             </tbody>
           </table>
-        </div>
-        
+        </div> -->
+
         <p class="text-content">
           - The <span style="color:var(--dark_accent_color);"><b>% Resolved</b></span> metric refers to the percentage of Multi-SWE-bench instances
           that were <i>resolved</i> by the model.
@@ -175,13 +184,14 @@
 
 <script lang="ts" setup>
 
-import { useLeaderboard,useVisualLeaderboard } from './utils'
+import { useLeaderboard,useVisualLeaderboard,useAllLeaderboard } from './utils'
 import About from './About.vue'
 import Header from './Header.vue'
 import Resources from './Resources.vue'
 
-const { leaderboard, languageData, datasetResults, language, dataset, total } = useLeaderboard()
-const { visual_leaderboard, visual_languageData, visual_datasetResults, visual_language, visual_dataset, visual_total } = useVisualLeaderboard()
+// const { leaderboard, languageData, datasetResults, language, dataset, total } = useLeaderboard()
+// const { visual_leaderboard, visual_languageData, visual_datasetResults, visual_language, visual_dataset, visual_total } = useVisualLeaderboard()
+const { allLeaderboards, selectedCategory, leaderboard, languageData, datasetResults, language, dataset, total} = useAllLeaderboard()
 const GITHUB_URL = 'https://github.com/multi-swe-bench/experiments/tree/main/evaluation'
 
 </script>
