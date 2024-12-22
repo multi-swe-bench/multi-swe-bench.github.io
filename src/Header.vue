@@ -37,12 +37,12 @@
       </a>
       <div class="dropdown-content">
         <a href="https://arxiv.org/abs/2408.14354">
-          <button class="outline" style="font-size: 12pt; height: 1.5em; width: 9em;border: 0px;">
+          <button class="outline" style="font-size: 12pt; height: 1.5em; width: 9em;outline: 3px solid #87CEFA;">
             <i class="fa fa-paperclip"></i> Textual-Java
           </button>
         </a>
         <a href="https://arxiv.org/abs/2408.14354">
-          <button class="outline" style="font-size: 12pt; height: 1.5em; width: 9em;border: 0px;">
+          <button class="outline" style="font-size: 12pt; height: 1.5em; width: 9em;outline: 3px solid #87CEFA;">
             <i class="fa fa-paperclip"></i> Visual-Python
           </button>
         </a>
