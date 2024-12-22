@@ -101,3 +101,62 @@ export function useVisualLeaderboard() {
 
   return { visual_leaderboard, visual_language, visual_dataset, visual_model, visual_languageData, visual_datasetData, visual_datasetResults, visual_modelData, visual_total }
 }
+
+export function useAllLeaderboard() {
+  // 新增变量
+  const allLeaderboards = ref<any[]>()
+  const selectedCategory = ref<string>() // 用于存储外层分类 (如"text")
+  const leaderboard = computed(() => 
+    allLeaderboards.value?.find(item => item.name === selectedCategory.value)?.data
+  )
+
+  // 保持已有变量和计算属性
+  const language = ref<string>()
+  const dataset = ref<string>()
+  const model = ref<string>()
+
+  // 更新计算属性以支持新结构
+  const languageData = computed(() => leaderboard.value?.find(item => item.name === language.value)?.data)
+  const datasetData = computed(() => languageData.value?.find(item => item.name === dataset.value)?.data)
+  const datasetResults = computed(() => languageData.value?.find(item => item.name === dataset.value)?.results)
+  const total = computed(() => Object.keys(languageData.value?.find(item => item.name === dataset.value)?.data || {}).length)
+  const modelData = computed(() => datasetResults.value?.find(item => item.name === model.value))
+
+  // 监听外层类别变化，自动更新内部数据
+  watch(allLeaderboards, (items) => {
+    selectedCategory.value = items?.[0]?.name // 默认选择第一个分类
+  })
+
+  watch(leaderboard, (items) => {
+    language.value = items?.[0]?.name // 默认选择第一个语言
+  })
+
+  watch(languageData, (items) => {
+    dataset.value = items?.[0]?.name // 默认选择第一个数据集
+  })
+
+  watch(datasetResults, (items) => {
+    model.value = items?.[0]?.name // 默认选择第一个模型
+  })
+
+  // 数据加载
+  onMounted(async () => {
+    const response = await fetch('https://multi-swe-bench.github.io/experiments/all_leaderboard.json')
+    allLeaderboards.value = await response.json()
+  })
+
+  // 返回所有需要的变量和方法
+  return { 
+    allLeaderboards,
+    selectedCategory, // 用于切换不同分类
+    leaderboard, 
+    language, 
+    dataset, 
+    model, 
+    languageData, 
+    datasetData, 
+    datasetResults, 
+    modelData, 
+    total 
+  }
+}
