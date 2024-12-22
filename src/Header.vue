@@ -14,7 +14,7 @@
       >
         <h1 style="font-size: 60px; padding-top: 0.4em">Multi-SWE-bench</h1>
         <img
-          src="/logo.png"
+          src="/logo-v2.png"
           style="height: 100px; padding-top: 0em; padding-left: 0.5em"
         />
       </div>
