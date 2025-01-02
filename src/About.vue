@@ -24,6 +24,17 @@
   url={https://arxiv.org/abs/2408.14354}, 
 }</code></pre>
     <br/>
+<pre id="citation">
+<code>@misc{zhang2024codevissueresolvingvisual,
+      title={CodeV: Issue Resolving with Visual Data}, 
+      author={Linhao Zhang and Daoguang Zan and Quanshun Yang and Zhirong Huang and Dong Chen and Bo Shen and Tianyu Liu and Yongshun Gong and Pengjie Huang and Xudong Lu and Guangtai Liang and Lizhen Cui and Qianxiang Wang},
+      year={2024},
+      eprint={2412.17315},
+      archivePrefix={arXiv},
+      primaryClass={cs.SE},
+      url={https://arxiv.org/abs/2412.17315}, 
+}</code></pre>
+    <br/>
         <b>Disclaimer:</b> Multi-SWE-bench is for research purposes only. Models
         evaluated on Multi-SWE-bench may produce unexpected results.
         We are not responsible for any damages caused by the use of
