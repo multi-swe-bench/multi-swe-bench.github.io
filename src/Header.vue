@@ -1,5 +1,5 @@
 <template>
-  <section style="background-color: var(--dark_accent_color)">
+  <section style="background-image: linear-gradient(to right bottom, #0ea7ff, #00b5fa, #00c1e9, #00c9d0, #00cfb4);">
     <div
       class="content-wrapper title-wrapper"
       style="flex-direction: column"
