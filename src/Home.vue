@@ -3,7 +3,7 @@
   <section class="main-container">
     <div class="content-wrapper" style="display: flex; justify-content: center; align-items: center;">
       <div style="background-color: black; padding: 1.5em 1em; color: white; border-radius: 1em; text-align: center; width: 82%;">
-        📣 [08/2024] We've released the JAVA version of <a rel="noopener noreferrer" target="_blank" style="color:var(--dark_accent_color)" href="https://www.swebench.com">SWE-bench</a>!
+        📣 [08/2024] We’ve released the JAVA version of <a rel="noopener noreferrer" target="_blank" style="color:var(--dark_accent_color)" href="https://www.swebench.com">SWE-bench</a>!
         Check it out on <a target="_blank" rel="noopener noreferrer" style="color:var(--dark_accent_color)" href="https://huggingface.co/datasets/Daoguang/multi-swe-bench">Hugging Face</a>.
         For more details, see our <a target="_blank" rel="noopener noreferrer" style="color:var(--dark_accent_color)" href="https://arxiv.org/abs/2408.14354">paper</a>.
       </div>
@@ -11,67 +11,33 @@
     <div class="content-wrapper">
       <div class="content-box" v-if="leaderboard">
         <h2 class="text-title">Leaderboard</h2>
-        
-        <!-- 改进的导航部分 -->
-        <div class="leaderboard-navigation">
-          <div class="selector-group">
-            <label for="categorySelect">Category:</label>
-            <select 
-              id="categorySelect" 
-              v-model="selectedCategory" 
-              class="leaderboard-select">
-              <option 
-                v-for="{ name, data } in allLeaderboards" 
-                :key="name" 
-                :value="name" 
-                :disabled="!data?.length">
-                {{ name }}
-              </option>
-            </select>
-          </div>
-          
-          <div class="selector-group">
-            <label for="languageSelect">Language:</label>
-            <select 
-              id="languageSelect" 
-              v-model="language" 
-              class="leaderboard-select">
-              <option 
-                v-for="{ name, data } in leaderboard" 
-                :key="name" 
-                :value="name" 
-                :disabled="!data?.length">
-                {{ name }}
-              </option>
-            </select>
-          </div>
-          
-          <div class="selector-group" v-if="languageData">
-            <label for="datasetSelect">Dataset:</label>
-            <select 
-              id="datasetSelect" 
-              v-model="dataset" 
-              class="leaderboard-select">
-              <option 
-                v-for="{ name, results } in languageData" 
-                :key="name" 
-                :value="name" 
-                :disabled="!results?.length">
-                {{ name }}
-              </option>
-            </select>
-          </div>
-        </div>
-        
-        <!-- 简洁的数据指示器 -->
-        <div class="data-indicator">
-          <span class="indicator-item">{{ selectedCategory }}</span>
-          <span class="indicator-separator">›</span>
-          <span class="indicator-item">{{ language }}</span>
-          <span class="indicator-separator">›</span>
-          <span class="indicator-item">{{ dataset }}</span>
-        </div>
-        
+        <ul class="tab">
+          <li
+            v-for="{ name, data } in allLeaderboards"
+            :key="name"
+            :class="{ active: name === selectedCategory, disabled: !data?.length }"
+            @click="selectedCategory = name">
+            <button>{{ name }}</button>
+          </li>
+        </ul>
+        <ul class="tab">
+          <li
+            v-for="{ name, data } in leaderboard"
+            :key="name"
+            :class="{ active: name === language, disabled: !data?.length }"
+            @click="language = name">
+            <button>{{ name }}</button>
+          </li>
+        </ul>
+        <ul class="tab" v-if="languageData">
+          <li
+            v-for="{ name, results } in languageData"
+            :key="name"
+            :class="{ active: name === dataset, disabled: !results?.length }"
+            @click="dataset = name">
+            <button>{{ name }}</button>
+          </li>
+        </ul>
         <div class="tabcontent tabcontentall block" v-if="datasetResults">
           <table class="scrollable">
             <thead>
@@ -123,6 +89,76 @@
           </table>
         </div>
 
+        <!-- <h2 class="text-title">Visual-Leaderboard</h2>
+        <ul class="tab">
+          <li
+            v-for="{ name, data } in visual_leaderboard"
+            :key="name"
+            :class="{ active: name === visual_language, disabled: !data?.length }"
+            @click="visual_language = name">
+            <button>{{ name }}</button>
+          </li>
+        </ul>
+        <ul class="tab" v-if="visual_languageData">
+          <li
+            v-for="{ name, results } in visual_languageData"
+            :key="name"
+            :class="{ active: name === dataset, disabled: !results?.length }"
+            @click="dataset = name">
+            <button>{{ name }}</button>
+          </li>
+        </ul>
+        <div class="tabcontent tabcontentall block" v-if="visual_datasetResults">
+          <table class="scrollable">
+            <thead>
+              <tr>
+                <th><div class="sticky-header-content">Model</div></th>
+                <th><div class="sticky-header-content">% Resolved</div></th>
+                <th><div class="sticky-header-content">Date</div></th>
+                <th><div class="sticky-header-content">Logs</div></th>
+                <th><div class="sticky-header-content">Trajs</div></th>
+                <th><div class="sticky-header-content">Site</div></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="(item, index) of visual_datasetResults">
+                <td>
+                  <template v-if="index === 0">🥇 </template>
+                  <template v-else-if="index === 1">🥈 </template>
+                  <template v-else-if="index === 2">🥉 </template>
+                  <template v-if="item.oss">🤠 </template>
+                  <template v-if="item.verified">✅ </template>
+                  {{ item.name }}
+                </td>
+                <td class="font-bold">
+                  {{ +(item.resolved * 100 / visual_total).toFixed(2) }}
+                </td>
+                <td>
+                  <span class="label-date">{{ item.date }}</span>
+                </td>
+                <td class="text-center">
+                  <template v-if="item.hasLogs">
+                    <a target="_blank" rel="noopener noreferrer" :href="`${GITHUB_URL}/${item.path}/logs`">🔗</a>
+                  </template>
+                  <template v-else> - </template>
+                </td>
+                <td class="text-center">
+                  <template v-if="item.hasTrajs">
+                    <a target="_blank" rel="noopener noreferrer" :href="`${GITHUB_URL}/${item.path}/trajs`">🔗</a>
+                  </template>
+                  <template v-else> - </template>
+                </td>
+                <td class="text-center">
+                  <template v-if="item.site">
+                    <a target="_blank" rel="noopener noreferrer" :href="item.site">🔗</a>
+                  </template>
+                  <template v-else> - </template>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div> -->
+
         <p class="text-content">
           - The <span style="color:var(--dark_accent_color);"><b>% Resolved</b></span> metric refers to the percentage of Multi-SWE-bench instances
           that were <i>resolved</i> by the model.
@@ -141,133 +177,73 @@
         </p>
       </div>
     </div>
+    <!-- <Resources></Resources> -->
     <About></About>
   </section>
 </template>
 
 <script lang="ts" setup>
 
-import { useLeaderboard, useVisualLeaderboard, useAllLeaderboard } from './utils'
+import { useLeaderboard,useVisualLeaderboard,useAllLeaderboard } from './utils'
 import About from './About.vue'
 import Header from './Header.vue'
 import Resources from './Resources.vue'
 
+// const { leaderboard, languageData, datasetResults, language, dataset, total } = useLeaderboard()
+// const { visual_leaderboard, visual_languageData, visual_datasetResults, visual_language, visual_dataset, visual_total } = useVisualLeaderboard()
 const { allLeaderboards, selectedCategory, leaderboard, languageData, datasetResults, language, dataset, total} = useAllLeaderboard()
 const GITHUB_URL = 'https://github.com/multi-swe-bench/experiments/tree/main/evaluation'
 
 </script>
 
 <style lang="scss">
-.leaderboard-navigation {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  margin-bottom: 1.5rem;
-  padding: 1rem;
-  background-color: #f8f9fa;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-}
 
-.selector-group {
-  display: flex;
-  flex-direction: column;
-  min-width: 200px;
-  
-  label {
-    font-size: 0.8rem;
-    font-weight: 600;
-    margin-bottom: 0.3rem;
-    color: #555;
-  }
-}
-
-.leaderboard-select {
-  padding: 0.5rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 1rem;
-  background-color: white;
-  cursor: pointer;
-  transition: border-color 0.2s, box-shadow 0.2s;
-  
-  &:hover {
-    border-color: var(--accent_color);
-  }
-  
-  &:focus {
-    outline: none;
-    border-color: var(--accent_color);
-    box-shadow: 0 0 0 2px rgba(var(--accent_color-rgb), 0.2);
-  }
-  
-  option:disabled {
-    color: #aaa;
-  }
-}
-
-.data-indicator {
-  display: flex;
-  align-items: center;
-  margin-bottom: 1rem;
-  font-size: 0.9rem;
-  color: #666;
-  
-  .indicator-item {
-    font-weight: 600;
-    
-    &:last-child {
-      color: var(--accent_color);
-    }
-  }
-  
-  .indicator-separator {
-    margin: 0 0.5rem;
-    color: #aaa;
-  }
-}
-
-// 响应式设计
-@media (max-width: 768px) {
-  .leaderboard-navigation {
-    flex-direction: column;
-    gap: 0.75rem;
-  }
-  
-  .selector-group {
-    width: 100%;
-  }
-}
-
-table.scrollable {
-  width: 100%;
-  border-collapse: collapse;
-  
-  th, td {
-    padding: 0.75rem;
-    border: 1px solid #ddd;
-  }
-  
-  th {
-    background-color: #f5f5f5;
-    font-weight: 600;
-    text-align: left;
-  }
-  
-  tr:nth-child(even) {
-    background-color: #f9f9f9;
-  }
-  
-  tr:hover {
-    background-color: #f1f1f1;
-  }
-}
-
-.text-center {
-  text-align: center;
-}
-
-.font-bold {
+.tab-item {
   font-weight: bold;
+  cursor: pointer;
+  height: 16px;
+  padding: 8px 12px;
+  border-bottom: 2px solid var(--accent_color);
+  transition: all 0.3s ease;
+
+  &.active {
+    background-color: var(--accent_color);
+    color: white;
+    cursor: default;
+  }
 }
+
+ul.tab {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  border: 2px solid var(--accent_color);
+  border-bottom: 0;
+  background-color: #f1f1f1;
+}
+
+ul.tab li {float: left;}
+ul.tab li button {
+  border: none;
+  color: black;
+  display: inline-block;
+  font-size: 17px;
+  padding: 0.5em 1em;
+  text-align: center;
+  text-decoration: none;
+  transition: 0.3s;
+}
+ul.tab li:hover button {
+  background-color: #ddd;
+}
+ul.tab li:focus button, ul.tab li.active button {
+  background-color: #ccc;
+}
+
+ul.tab li.disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
 </style>
