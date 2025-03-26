@@ -72,18 +72,21 @@
         </div>
 
         <p class="text-content">
-          - The <span style="color:var(--dark_accent_color);"><b>% Resolved</b></span> metric refers to the percentage of Multi-SWE-bench instances
-          that were <i>resolved</i> by the model.
+          - The <span style="color:var(--dark_accent_color);"><b>% Resolved</b></span> metric is the percentage of instances
+          (<b>2294</b> for test, <b>500</b> for verified, <b>300</b> for lite, <b>517</b> for Multimodal) <i>solved</i> by the model.
           <br>
-          - <span style="color:var(--dark_accent_color);"><b>✅ Verified</b></span> indicates that we, the Multi-SWE-bench team, received access to the system and
+          - <span style="color:var(--dark_accent_color);"><b>✅ Checked</b></span> indicates that we, the Multi-SWE-bench team, received access to the system and
           were able to reproduce the patch generations.
           <br>
-          - <span style="color:var(--dark_accent_color);"><b>🤠 Open</b></span> refers to submissions that have open-source code. This does <i>not</i>
-          necessarily mean the underlying model is open-source.
+          - <span style="color:var(--dark_accent_color);"><b>🤠 Open</b></span> refers to submissions that have open-source code. This does <i>not</i> necessarily mean the underlying model is open-source.
           <br>
-          - If you would like to submit your model to the leaderboard, please check the <router-link to="/submit">submission</router-link> page.
+          - <span style="color:var(--dark_accent_color);"><b>🆕 New</b></span> refers to the most recently submitted solutions.
+
           <br>
-          - All submissions are Pass@1, do not use
+          <br>
+
+          If you'd like to submit to the leaderboard, please check <router-link to="/submit">this</router-link> page.
+          All submissions are Pass@1, do not use
           <code style="color:black;background-color:#ddd;border-radius: 0.25em">hints_text</code>,
           and are in the unassisted setting.
         </p>
