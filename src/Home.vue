@@ -26,6 +26,7 @@
               <tr>
                 <th><div class="sticky-header-content">Model</div></th>
                 <th><div class="sticky-header-content">% Resolved</div></th>
+                <th><div class="sticky-header-content">Org</div></th>
                 <th><div class="sticky-header-content">Date</div></th>
                 <th><div class="sticky-header-content">Logs</div></th>
                 <th><div class="sticky-header-content">Trajs</div></th>
@@ -44,6 +45,12 @@
                 </td>
                 <td class="font-bold">
                   {{ +(item.resolved * 100 / total).toFixed(2) }}
+                </td>
+                <td class="text-center">
+                  <template v-if="item.orgIcon">
+                    <img :src="item.orgIcon" style="height: 1.25em;">
+                  </template>
+                  <template v-else> - </template>
                 </td>
                 <td>
                   <span class="label-date">{{ item.date }}</span>
