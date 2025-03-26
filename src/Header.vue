@@ -12,10 +12,10 @@
           padding-bottom: 15px;
         "
       >
-        <h1 style="font-size: 60px; padding-top: 0.4em">Multi-SWE-bench</h1>
+        <h1 style="font-size: 60px; margin: 0">Multi-SWE-bench</h1>
         <img
-          src="/logo-v2.png"
-          style="height: 100px; padding-top: 0em; padding-left: 0.5em"
+          src="/logo-v3.svg"
+          style="height: 100px; padding-left: 0.5em"
         />
       </div>
       <h3>A Multi-Lingual and Multi-Modal GitHub Issue Resolving Benchmark</h3>
