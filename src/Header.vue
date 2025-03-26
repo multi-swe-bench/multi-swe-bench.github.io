@@ -1,5 +1,5 @@
 <template>
-  <section style="background-image: linear-gradient(to right bottom, #0ea7ff, #00b5fa, #00c1e9, #00c9d0, #00cfb4);">
+  <section class="gradient-background">
     <div
       class="content-wrapper title-wrapper"
       style="flex-direction: column"
@@ -89,3 +89,20 @@
     </div>
   </section>
 </template>
+
+<style lang="css">
+.gradient-background {
+  height: 400px;
+  background: 
+    radial-gradient(circle at 20% 30%, #b07219, transparent 40%),
+    radial-gradient(circle at 80% 40%, #3178c6, transparent 40%),
+    radial-gradient(circle at 20% 70%, #f1e05a, transparent 40%),
+    radial-gradient(circle at 70% 90%, #00ADD8, transparent 40%),
+    radial-gradient(circle at 50% 50%, #f34b7d, transparent 40%);
+  background-blend-mode: screen;
+  display: flex;
+  align-items: center;
+}
+
+</style>
+
