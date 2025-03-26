@@ -13,28 +13,10 @@
         <h2 class="text-title">Leaderboard</h2>
         <ul class="tab">
           <li
-            v-for="{ name, data } in allLeaderboards"
-            :key="name"
-            :class="{ active: name === selectedCategory, disabled: !data?.length }"
-            @click="selectedCategory = name">
-            <button>{{ name }}</button>
-          </li>
-        </ul>
-        <ul class="tab">
-          <li
             v-for="{ name, data } in leaderboard"
             :key="name"
-            :class="{ active: name === language, disabled: !data?.length }"
+            :class="{ active: name === language }"
             @click="language = name">
-            <button>{{ name }}</button>
-          </li>
-        </ul>
-        <ul class="tab" v-if="languageData">
-          <li
-            v-for="{ name, results } in languageData"
-            :key="name"
-            :class="{ active: name === dataset, disabled: !results?.length }"
-            @click="dataset = name">
             <button>{{ name }}</button>
           </li>
         </ul>
@@ -123,7 +105,7 @@ import Resources from './Resources.vue'
 // const { visual_leaderboard, visual_languageData, visual_datasetResults, visual_language, visual_dataset, visual_total } = useVisualLeaderboard()
 const { allLeaderboards, selectedCategory, leaderboard, languageData, datasetResults, language, dataset, total} = useAllLeaderboard()
 const GITHUB_URL = 'https://github.com/multi-swe-bench/experiments/tree/main/evaluation'
-
+console.log({ allLeaderboards, selectedCategory, leaderboard, languageData, datasetResults, language, dataset, total});
 </script>
 
 <style lang="scss">
