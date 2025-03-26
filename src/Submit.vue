@@ -22,11 +22,6 @@
             <i class="fab fa-github"></i> Code&nbsp;
           </button>
         </a>
-        <router-link to="/viewer">
-          <button class="outline">
-            <i class="fa fa-chart-simple"></i> Analysis&nbsp;
-          </button>
-        </router-link>
       </div>
     </div>
   </section>

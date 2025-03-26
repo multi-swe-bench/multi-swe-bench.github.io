@@ -85,11 +85,6 @@
             <i class="fa fa-upload"></i> Submit&nbsp;
           </button>
         </router-link>
-        <router-link to="/viewer">
-          <button class="outline">
-            <i class="fa fa-chart-simple"></i> Analysis&nbsp;
-          </button>
-        </router-link>
       </div>
     </div>
   </section>
