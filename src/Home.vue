@@ -25,7 +25,15 @@
             <thead>
               <tr>
                 <th><div class="sticky-header-content">Model</div></th>
-                <th><div class="sticky-header-content">% Resolved</div></th>
+                <th>
+                  <div>% Resolved</div>
+                  <div class="resolution-subcategories">
+                    <span class="sticky-header-content">Overall</span>
+                    <span class="sticky-header-content">Easy</span>
+                    <span class="sticky-header-content">Medium</span>
+                    <span class="sticky-header-content">Hard</span>
+                  </div>
+                </th>
                 <th><div class="sticky-header-content">Org</div></th>
                 <th><div class="sticky-header-content">Date</div></th>
                 <th><div class="sticky-header-content">Logs</div></th>
@@ -44,7 +52,12 @@
                   {{ item.name }}
                 </td>
                 <td class="font-bold">
-                  {{ +(item.resolved * 100 / total).toFixed(2) }}
+                  <div class="resolution-values">
+                    <span>{{ +(item.resolved * 100 / total).toFixed(2) }}</span>
+                    <span>{{ +(item.resolvedEasy * 100 / total).toFixed(2) || 0 }}</span>
+                    <span>{{ +(item.resolvedMedium * 100 / total).toFixed(2) || 0 }}</span>
+                    <span>{{ +(item.resolvedHard * 100 / total).toFixed(2) || 0 }}</span>
+                  </div>
                 </td>
                 <td class="text-center">
                   <template v-if="item.orgIcon">
@@ -119,6 +132,32 @@ console.log({ allLeaderboards, selectedCategory, leaderboard, languageData, data
 </script>
 
 <style lang="scss">
+.resolution-subcategories {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85em;
+  margin-top: 0.3em;
+  color: #666;
+  font-weight: normal;
+}
+
+.resolution-subcategories span {
+  font-weight: bold;
+  flex: 1;
+  text-align: center;
+  padding: 0 0.2em;
+}
+
+.resolution-values {
+  display: flex;
+  justify-content: space-between;
+}
+
+.resolution-values span {
+  flex: 1;
+  text-align: center;
+  padding: 0 0.2em;
+}
 
 .tab-item {
   font-weight: bold;
