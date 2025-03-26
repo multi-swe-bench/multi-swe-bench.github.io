@@ -106,9 +106,13 @@ export function useAllLeaderboard() {
   // 新增变量
   const allLeaderboards = ref<any[]>()
   const selectedCategory = ref<string>() // 用于存储外层分类 (如"text")
-  const leaderboard = computed(() => 
-    allLeaderboards.value?.find(item => item.name === selectedCategory.value)?.data
-  )
+  
+  // 直接返回顶层数组作为leaderboard，这样导航栏会显示不同的语言选项
+  const leaderboard = computed(() => {
+    // 直接返回顶层数组，这样会显示Java, TypeScript等语言选项
+    console.log('Returning leaderboard:', allLeaderboards.value)
+    return allLeaderboards.value || []
+  })
 
   // 保持已有变量和计算属性
   const language = ref<string>()
@@ -116,33 +120,100 @@ export function useAllLeaderboard() {
   const model = ref<string>()
 
   // 更新计算属性以支持新结构
-  const languageData = computed(() => leaderboard.value?.find(item => item.name === language.value)?.data)
-  const datasetData = computed(() => languageData.value?.find(item => item.name === dataset.value)?.data)
-  const datasetResults = computed(() => languageData.value?.find(item => item.name === dataset.value)?.results)
-  const total = computed(() => Object.keys(languageData.value?.find(item => item.name === dataset.value)?.data || {}).length)
-  const modelData = computed(() => datasetResults.value?.find(item => item.name === model.value))
+  const languageData = computed(() => {
+    // 确保 leaderboard.value 是一个数组
+    if (!leaderboard.value || !Array.isArray(leaderboard.value)) {
+      console.log('leaderboard.value is not an array:', leaderboard.value)
+      return []
+    }
+    // 找到选中的语言对象
+    const selectedLanguage = leaderboard.value.find(item => item.name === language.value)
+    console.log('Selected language:', selectedLanguage)
+    return selectedLanguage?.data || []
+  })
+  console.log('Leaderboard value:', leaderboard.value)
+  console.log('Language data:', languageData.value)
+  
+  const datasetData = computed(() => {
+    // 确保 languageData.value 是一个数组
+    if (!languageData.value || !Array.isArray(languageData.value)) {
+      console.log('languageData.value is not an array:', languageData.value)
+      return {}
+    }
+    // 找到选中的数据集对象
+    const selectedDataset = languageData.value.find(item => item.name === dataset.value)
+    console.log('Selected dataset:', selectedDataset)
+    return selectedDataset?.data || {}
+  })
+  
+  const datasetResults = computed(() => {
+    // 确保 languageData.value 是一个数组
+    if (!languageData.value || !Array.isArray(languageData.value)) {
+      console.log('languageData.value is not an array for results:', languageData.value)
+      return []
+    }
+    // 找到选中的数据集对象的结果
+    const selectedDataset = languageData.value.find(item => item.name === dataset.value)
+    console.log('Selected dataset results:', selectedDataset?.results)
+    return selectedDataset?.results || []
+  })
+  
+  const total = computed(() => {
+    // 确保 languageData.value 是一个数组
+    if (!languageData.value || !Array.isArray(languageData.value)) {
+      return 0
+    }
+    const datasetObj = languageData.value.find(item => item.name === dataset.value)?.data
+    return datasetObj ? Object.keys(datasetObj).length : 0
+  })
+  
+  const modelData = computed(() => {
+    // 确保 datasetResults.value 是一个数组
+    if (!datasetResults.value || !Array.isArray(datasetResults.value)) {
+      return null
+    }
+    // 找到选中的模型对象
+    const selectedModel = datasetResults.value.find(item => item.name === model.value)
+    console.log('Selected model:', selectedModel)
+    return selectedModel
+  })
 
   // 监听外层类别变化，自动更新内部数据
   watch(allLeaderboards, (items) => {
-    selectedCategory.value = items?.[0]?.name // 默认选择第一个分类
+    // 现在我们直接使用allLeaderboards作为leaderboard
+    // 不需要设置selectedCategory
+    if (items && items.length > 0) {
+      language.value = items[0].name // 默认选择第一个语言
+      console.log('Setting default language to:', language.value)
+    }
   })
 
   watch(leaderboard, (items) => {
-    language.value = items?.[0]?.name // 默认选择第一个语言
+    if (items && items.length > 0 && !language.value) {
+      language.value = items[0].name // 默认选择第一个语言
+      console.log('Setting language from leaderboard to:', language.value)
+    }
   })
 
   watch(languageData, (items) => {
-    dataset.value = items?.[0]?.name // 默认选择第一个数据集
+    if (items && items.length > 0) {
+      dataset.value = items[0].name // 默认选择第一个数据集
+      console.log('Setting dataset to:', dataset.value)
+    }
   })
 
   watch(datasetResults, (items) => {
-    model.value = items?.[0]?.name // 默认选择第一个模型
+    if (items && items.length > 0) {
+      model.value = items[0].name // 默认选择第一个模型
+      console.log('Setting model to:', model.value)
+    }
   })
 
   // 数据加载
   onMounted(async () => {
-    const response = await fetch('https://multi-swe-bench.github.io/experiments/all_leaderboard.json')
+    const response = await fetch('https://raw.githubusercontent.com/multi-swe-bench/experiments/refs/heads/dist/leaderboard.json')
     allLeaderboards.value = await response.json()
+    console.log(allLeaderboards.value)
   })
 
   // 返回所有需要的变量和方法
