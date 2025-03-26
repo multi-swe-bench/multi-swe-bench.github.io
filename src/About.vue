@@ -1,7 +1,14 @@
 <template>
   <div class="content-wrapper">
     <div class="content-box">
-      <h2 class="text-title">Citation</h2>
+      <h2 class="text-title">About</h2>
+      <p class="text-content">
+        SWE-bench is a dataset that tests systems' ability to solve GitHub
+        issues automatically. The dataset collects ... Issue-Pull Request
+        pairs from ... popular ... repositories. Evaluation is performed by unit test verification using post-PR behavior as the reference solution.
+        Read more about Multi-SWE-bench in our <a href="https://arxiv.org/abs/2310.06770" target="_blank">paper</a>!
+      </p>
+      <h3 class="text-title">Citation</h3>
       If you found <a href="https://www.swebench.com">SWE-bench</a> or our <a href="https://multi-swe-bench.github.io">Multi-SWE-bench</a> helpful for your work, please cite as follows:
       <p class="text-content">
 <pre id="citation">

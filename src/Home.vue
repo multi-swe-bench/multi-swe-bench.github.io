@@ -1,13 +1,13 @@
 <template>
   <Header></Header>
   <section class="main-container">
-    <div class="content-wrapper" style="display: flex; justify-content: center; align-items: center;">
+    <!-- <div class="content-wrapper" style="display: flex; justify-content: center; align-items: center;">
       <div style="background-color: black; padding: 1.5em 1em; color: white; border-radius: 1em; text-align: center; width: 82%;">
         📣 [08/2024] We’ve released the JAVA version of <a rel="noopener noreferrer" target="_blank" style="color:var(--dark_accent_color)" href="https://www.swebench.com">SWE-bench</a>!
         Check it out on <a target="_blank" rel="noopener noreferrer" style="color:var(--dark_accent_color)" href="https://huggingface.co/datasets/Daoguang/multi-swe-bench">Hugging Face</a>.
         For more details, see our <a target="_blank" rel="noopener noreferrer" style="color:var(--dark_accent_color)" href="https://arxiv.org/abs/2408.14354">paper</a>.
       </div>
-    </div>
+    </div> -->
     <div class="content-wrapper">
       <div class="content-box" v-if="leaderboard">
         <h2 class="text-title">Leaderboard</h2>
