@@ -1,5 +1,5 @@
 <template>
-  <section style="background-image: linear-gradient(to right bottom, #0ea7ff, #00b5fa, #00c1e9, #00c9d0, #00cfb4);">
+  <section class="gradient-background">
     <div
       class="content-wrapper title-wrapper"
       style="flex-direction: column;text-align: center;"
@@ -8,7 +8,7 @@
       <div class="content-wrapper" style="margin-top: 2em">
         <router-link to="/">
           <button class="outline" style="flex-direction: row; display: flex; justify-content: center; align-items: center;">
-            <img src="/logo.png" style="height: 1.3em; margin-right: 0.4em; margin-bottom: 0.3em;" />
+            <img src="/logo-v3.svg" style="height: 1.3em; margin-right: 0.4em; margin-bottom: 0.3em;" />
             Home&nbsp;
           </button>
         </router-link>
