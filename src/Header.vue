@@ -18,7 +18,7 @@
           style="height: 100px; padding-left: 0.5em"
         />
       </div>
-      <h3>A Multi-Lingual and Multi-Modal GitHub Issue Resolving Benchmark</h3>
+      <h3>A Multi-Lingual Benchmark for Issue Resolving</h3>
       <!--<h3 style="font-size: 20px; padding-top: 1.2em">ArXiv 2024</h3>-->
           <!-- <p style="text-align: center;margin-top:1em;">
         Daoguang Zan*, Zhirong Huang*, Ailun Yu*, <br />
