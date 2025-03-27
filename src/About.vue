@@ -12,14 +12,14 @@
       If you found <a href="https://www.swebench.com">SWE-bench</a> or our <a href="https://multi-swe-bench.github.io">Multi-SWE-bench</a> helpful for your work, please cite as follows:
       <p class="text-content">
 <pre id="citation">
-<code>@misc{zhang2024codevissueresolvingvisual,
-      title={CodeV: Issue Resolving with Visual Data}, 
-      author={Linhao Zhang and Daoguang Zan and Quanshun Yang and Zhirong Huang and Dong Chen and Bo Shen and Tianyu Liu and Yongshun Gong and Pengjie Huang and Xudong Lu and Guangtai Liang and Lizhen Cui and Qianxiang Wang},
-      year={2024},
-      eprint={2412.17315},
+<code>@misc{zan2025multiswebench,
+      title={Multi-SWE-bench: A Multilingual Benchmark for Issue Resolving}, 
+      author={Xxx},
+      year={2025},
+      eprint={2503.17315},
       archivePrefix={arXiv},
       primaryClass={cs.SE},
-      url={https://arxiv.org/abs/2412.17315}, 
+      url={xxx}, 
 }</code></pre>
     <br/>
         <b>Disclaimer:</b> Multi-SWE-bench is for research purposes only. Models
@@ -33,7 +33,7 @@
         We express our deepest gratitude to the creators of the SWE-bench dataset.
       </p>
       <p class="text-content">
-        Correspondence to: <a href="mailto:daoguang@iscas.ac.cn">daoguang@iscas.ac.cn</a>
+        Correspondence to: <a href="mailto:zandaoguang@bytedance.com">zandaoguang@bytedance.com</a>
         <br/>
         If you're interested, feel free to join our discussions on <a href="https://discord.gg/HEU3gvyXUf">Discord</a>.
       </p>
