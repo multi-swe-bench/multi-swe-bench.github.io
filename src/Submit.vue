@@ -29,7 +29,7 @@
     <div class="content-wrapper" style="display: flex; justify-content: center; align-items: center;">
       <div style="background-color: black; padding: 1.5em 1em; color: white; border-radius: 1em; text-align: center; width: 80%;">
         All official submissions to the Multi-SWE-bench leaderboard are maintained at
-        <a target="_blank" rel="noopener noreferrer" href="https://github.com/multi-swe-bench/experiments" class="light-blue-link">
+        <a target="_blank" rel="noopener noreferrer" href="https://github.com/multi-swe-bench/experiments" style="color: #00ADD8;">
           <i class="fab fa-github"></i> multi-swe-bench/experiments
         </a>
       </div>
