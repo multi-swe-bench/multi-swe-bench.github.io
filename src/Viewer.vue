@@ -12,12 +12,12 @@
             Home&nbsp;
           </button>
         </router-link>
-        <a target="_blank" rel="noopener noreferrer" href="https://arxiv.org/abs/2408.14354">
+        <a target="_blank" rel="noopener noreferrer" href="https://arxiv.org/abs/xxxx.xxxxx">
           <button class="outline">
             <i class="fa fa-paperclip"></i> Paper&nbsp;
           </button>
         </a>
-        <a target="_blank" rel="noopener noreferrer" href="https://github.com/multi-swe-bench/multi-swe-bench-env">
+        <a target="_blank" rel="noopener noreferrer" href="https://github.com/multi-swe-bench/multi-swe-bench">
           <button class="outline">
             <i class="fab fa-github"></i> Code&nbsp;
           </button>

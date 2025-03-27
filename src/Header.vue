@@ -29,25 +29,25 @@
       <div class="content-wrapper" style="margin-top: 2em">
 
     <!-- Paper-->
-    <a href="https://arxiv.org/abs/2408.14354">
+    <a href="https://arxiv.org/abs/xxxx.xxxxx">
       <button class="outline">
         <i class="fa fa-paperclip"></i> Paper&nbsp;
       </button>
     </a>
 
     <!-- Code -->
-    <a href="https://github.com/multi-swe-bench/multi-swe-bench-env">
+    <a href="https://github.com/multi-swe-bench/multi-swe-bench">
       <button class="outline">
         <i class="fab fa-github"></i> Code&nbsp;
       </button>
     </a>
         
-<!--       <a href="https://arxiv.org/abs/2408.14354">
+<!--       <a href="https://arxiv.org/abs/xxxx.xxxxx">
           <button class="outline">
             <i class="fa fa-paperclip"></i> Paper&nbsp;
           </button>
         </a>
-        <a href="https://github.com/multi-swe-bench/multi-swe-bench-env">
+        <a href="https://github.com/multi-swe-bench/multi-swe-bench">
           <button class="outline">
             <i class="fab fa-github"></i> Code&nbsp;
           </button>
