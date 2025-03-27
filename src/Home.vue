@@ -53,10 +53,10 @@
                 </td>
                 <td class="font-bold">
                   <div class="resolution-values">
-                    <span>{{ +(item.resolved * 100 / total).toFixed(2) }}</span>
-                    <span>{{ +(item.resolvedEasy * 100 / total).toFixed(2) || 0 }}</span>
-                    <span>{{ +(item.resolvedMedium * 100 / total).toFixed(2) || 0 }}</span>
-                    <span>{{ +(item.resolvedHard * 100 / total).toFixed(2) || 0 }}</span>
+                    <span>{{ +(item.resolvedRate).toFixed(2) }}</span>
+                    <span>{{ +(item.resolvedEasyRate).toFixed(2) || 0 }}</span>
+                    <span>{{ +(item.resolvedMediumRate).toFixed(2) || 0 }}</span>
+                    <span>{{ +(item.resolvedHardRate).toFixed(2) || 0 }}</span>
                   </div>
                 </td>
                 <td class="text-center">
