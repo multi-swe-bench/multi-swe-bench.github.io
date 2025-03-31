@@ -51,7 +51,7 @@
               <li><code>all_preds.jsonl</code>: Model predictions</li>
               <li><code>results/</code>: Multi-SWE-bench evaluation artifacts dump, containing:</li>
               <ul>
-                <li><code>results.json</code>: Summary of evaluation outcomes</li>-->
+                <li><code>results.json</code>: Summary of evaluation outcomes</li>
 <!--                <li>Eval. artifacts means 91 (verified) folders. Each folder (e.g. <code>apache__dubbo-10638</code>) contains:</li>-->
 <!--                <ul>-->
 <!--                    <li><code>eval.sh</code>: The evaluation script</li>-->
