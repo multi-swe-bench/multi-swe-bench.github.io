@@ -65,7 +65,7 @@
               <li><code>metadata.yaml</code>: Metadata for how result is shown on website. Please include the following fields:</li>
               <ul>
                 <li><code>name</code>: The name of your leaderboard entry</li>
-                <li><code>orgIcon</code>: URL/link to an icon representing your organization</li>
+                <li><code>orgIcon</code> (optional): URL/link to an icon representing your organization</li>
                 <li><code>oss</code>: <code>true</code> if your system is open-source</li>
                 <li><code>site</code>: URL/link to more information about your system</li>
                 <li><code>verified</code>: <code>false</code> (See below for results verification)</li>
