@@ -93,7 +93,7 @@
 
         <p class="text-content">
           - The <span style="color:var(--dark_accent_color);"><b>% Resolved</b></span> metric is the percentage of instances
-          (<b>2294</b> for test, <b>500</b> for verified, <b>300</b> for lite, <b>517</b> for Multimodal) <i>solved</i> by the model.
+          (<b>500</b> for Python, <b>132</b> for Java, <b>273</b> for TypeScript, <b>363</b> for JavaScript, <b>433</b> for Go, <b>265</b> for Rust, <b>130</b> for C, <b>131</b> for C++) <i>solved</i> by the model.
           <br>
           - <span style="color:var(--dark_accent_color);"><b>✅ Checked</b></span> indicates that we, the Multi-SWE-bench team, received access to the system and
           were able to reproduce the patch generations.
