@@ -106,24 +106,22 @@
     </div>
     -->
     
-    <!--
     <div class="content-wrapper">
       <div class="content-box">
         <h3>Verify Your Results</h3>
         <p>
-          The <i>Verified</i> check ✓ indicates that we (the SWE-bench team) received access to the model and were able to reproduce the patch generations.
+          The <i>Verified</i> check ✓ indicates that we (the Multi-SWE-bench team) received access to the model and were able to reproduce the patch generations.
         </p>
         <p style="margin-top:0.5em;">
           If you are interested in receiving the "verified" checkmark ✓ on your submission, please do the following:
         </p>
         <ol>
           <li>Create an issue</li>
-          <li>In the issue, provide us instructions on how to run your model on SWE-bench.</li>
-          <li>We will run your model on a random subset of SWE-bench and verify the results.</li>
+          <li>In the issue, provide us instructions on how to run your model on Multi-SWE-bench.</li>
+          <li>We will run your model on a random subset of Multi-SWE-bench and verify the results.</li>
         </ol>
       </div>
     </div>
-    -->
     <!--
     <div class="content-wrapper">
       <div class="content-box" id="reasoning-traces">
