@@ -12,13 +12,13 @@
           padding-bottom: 15px;
         "
       >
-        <h1 style="font-size: 60px; margin: 0">Multi-SWE-bench</h1>
+        <h1 style="font-size: 60px; margin: 0; color: black">Multi-SWE-bench</h1>
         <img
           src="/logo-v3.svg"
           style="height: 100px; padding-left: 0.5em"
         />
       </div>
-      <h3>A Multi-Lingual Benchmark for Issue Resolving</h3>
+      <h3 style="color: #333">A Multilingual Benchmark for Issue Resolving</h3>
       <!--<h3 style="font-size: 20px; padding-top: 1.2em">ArXiv 2024</h3>-->
           <!-- <p style="text-align: center;margin-top:1em;">
         Daoguang Zan*, Zhirong Huang*, Ailun Yu*, <br />
