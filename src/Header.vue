@@ -18,7 +18,9 @@
           style="height: 100px; padding-left: 0.5em"
         />
       </div>
-      <h3 style="color: #333">A Multilingual Benchmark for Issue Resolving</h3>
+      <h3 style="color: #333">
+        A <span style="color: #000; font-weight: bold;">Multilingual</span> Benchmark for Issue Resolving
+      </h3>
       <!--<h3 style="font-size: 20px; padding-top: 1.2em">ArXiv 2024</h3>-->
           <!-- <p style="text-align: center;margin-top:1em;">
         Daoguang Zan*, Zhirong Huang*, Ailun Yu*, <br />
