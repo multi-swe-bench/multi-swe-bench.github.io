@@ -4,7 +4,7 @@
       class="content-wrapper title-wrapper"
       style="flex-direction: column;text-align: center;"
     >
-      <h1 style="font-size: 60px; padding-top: 0.4em">Submit to Multi-SWE-bench</h1>
+      <h1 style="font-size: 60px; padding-top: 0.4em; color: black;text-shadow: -2px -2px 0 white, 2px -2px 0 white, -2px 2px 0 white, 2px 2px 0 white;">Submit to Multi-SWE-bench</h1>
       <div class="content-wrapper" style="margin-top: 2em">
         <router-link to="/">
           <button class="outline" style="flex-direction: row; display: flex; justify-content: center; align-items: center;">
@@ -20,6 +20,12 @@
         <a target="_blank" rel="noopener noreferrer" href="https://github.com/multi-swe-bench/multi-swe-bench">
           <button class="outline">
             <i class="fab fa-github"></i> Code&nbsp;
+          </button>
+        </a>
+        <!-- Data -->
+        <a href="https://huggingface.co/datasets/bytedance-research/Multi-SWE-Bench">
+          <button class="outline">
+            <i class="fa fa-database"></i> Data&nbsp;
           </button>
         </a>
       </div>
