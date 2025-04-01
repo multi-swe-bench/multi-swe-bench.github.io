@@ -12,14 +12,24 @@
           padding-bottom: 15px;
         "
       >
-        <h1 style="font-size: 60px; margin: 0; color: black">Multi-SWE-bench</h1>
+<!--        <h1 style="font-size: 60px; margin: 0; color: black">Multi-SWE-bench</h1>-->
+<!--        <h1 style="font-size: 60px; margin: 0; color: black; border: 3px solid white; padding: 10px; border-radius: 10px; display: inline-block;">-->
+<!--    Multi-SWE-bench-->
+<!--        </h1>-->
+        <h1 style="font-size: 60px; margin: 0; color: black;
+    text-shadow: -2px -2px 0 white, 2px -2px 0 white, -2px 2px 0 white, 2px 2px 0 white;">
+    Multi-SWE-bench
+        </h1>
         <img
           src="/logo-v3.svg"
           style="height: 100px; padding-left: 0.5em"
         />
       </div>
       <h3 style="color: #333">
-        A <span style="color: #000; font-weight: bold;">Multilingual</span> Benchmark for Issue Resolving
+        A <span style="font-weight: bold;
+            color: #000;">
+            Multilingual
+        </span> Benchmark for Issue Resolving
       </h3>
       <!--<h3 style="font-size: 20px; padding-top: 1.2em">ArXiv 2024</h3>-->
           <!-- <p style="text-align: center;margin-top:1em;">
@@ -43,7 +53,13 @@
         <i class="fab fa-github"></i> Code&nbsp;
       </button>
     </a>
-        
+
+     <!-- Data -->
+    <a href="https://huggingface.co/datasets/bytedance-research/Multi-SWE-Bench">
+      <button class="outline">
+        <i class="fa fa-database"></i> Data&nbsp;
+      </button>
+    </a>
 <!--       <a href="https://arxiv.org/abs/xxxx.xxxxx">
           <button class="outline">
             <i class="fa fa-paperclip"></i> Paper&nbsp;
@@ -80,3 +96,5 @@
 
 </style>
 
+<script setup lang="ts">
+</script>

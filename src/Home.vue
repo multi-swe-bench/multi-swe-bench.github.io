@@ -20,7 +20,7 @@
             <button>{{ name }}</button>
           </li>
         </ul>
-        <div class="tabcontent tabcontentall block" v-if="datasetResults">
+        <div class="tabcontent tabcontentall block" v-if="sortedResults">
           <table class="scrollable">
             <thead>
               <tr>
@@ -28,21 +28,41 @@
                 <th>
                   <div>% Resolved</div>
                   <div class="resolution-subcategories">
-                    <span class="sticky-header-content">Overall</span>
-                    <span class="sticky-header-content">Easy</span>
-                    <span class="sticky-header-content">Medium</span>
-                    <span class="sticky-header-content">Hard</span>
+                    <span class="sticky-header-content"
+                          @click="sortColumn('overall')">
+                      Overall
+                      <span :class="getSortIconClass('overall')">▼</span>
+                    </span>
+                    <span
+                      class="sticky-header-content"
+                      @click="sortColumn('easy')">
+                      Easy
+                      <span :class="getSortIconClass('easy')">▼</span>
+                    </span>
+                    <span
+                      class="sticky-header-content"
+                      @click="sortColumn('medium')">
+                      Medium
+                      <span :class="getSortIconClass('medium')">▼</span>
+                    </span>
+                    <span
+                      class="sticky-header-content"
+                      @click="sortColumn('hard')">
+                      Hard
+                      <span :class="getSortIconClass('hard')">▼</span>
+                    </span>
                   </div>
                 </th>
                 <th><div class="sticky-header-content">Org</div></th>
-                <th><div class="sticky-header-content">Date</div></th>
+<!--                <th><div class="sticky-header-content">Date</div></th>-->
+                <th><div class="sticky-header-content" @click="sortColumn('data')">Date<span :class="getSortIconClass('data')" style="margin-left: 5px;">▼</span></div></th>
                 <th><div class="sticky-header-content">Logs</div></th>
                 <th><div class="sticky-header-content">Trajs</div></th>
                 <th><div class="sticky-header-content">Site</div></th>
               </tr>
             </thead>
             <tbody>
-              <tr v-for="(item, index) of datasetResults">
+              <tr v-for="(item, index) of sortedResults">
                 <td>
                   <template v-if="index === 0">🥇 </template>
                   <template v-else-if="index === 1">🥈 </template>
@@ -130,6 +150,63 @@ import Resources from './Resources.vue'
 const { allLeaderboards, selectedCategory, leaderboard, languageData, datasetResults, language, dataset, total} = useAllLeaderboard()
 const GITHUB_URL = 'https://github.com/multi-swe-bench/experiments/tree/main/evaluation'
 console.log({ allLeaderboards, selectedCategory, leaderboard, languageData, datasetResults, language, dataset, total});
+import { ref,computed } from 'vue';
+
+// 初始化排序状态
+const sortOrder = ref({
+  overall: 'desc',  // 初始为降序
+  easy: 'desc',
+  medium: 'desc',
+  hard: 'desc',
+  date: 'desc',
+});
+
+// 获取图标的 CSS 类
+const getSortIconClass = (category: string) => {
+  return {
+    'sort-icon': true,  // 基础类，始终应用
+    'asc': sortOrder.value[category] === 'asc',  // 升序时添加 asc
+    'desc': sortOrder.value[category] === 'desc', // 降序时添加 desc
+    'selected': selectedSortCategory.value === category
+  };
+};
+
+// 当前选中的排序类别
+const selectedSortCategory = ref('overall');
+
+// 计算排序后的数据
+const sortedResults = computed(() => {
+  if (!Array.isArray(datasetResults.value) || datasetResults.value.length === 0) {
+    return [];
+  }
+  const keyMap = {
+    overall: 'resolvedRate',
+    easy: 'resolvedEasyRate',
+    medium: 'resolvedMediumRate',
+    hard: 'resolvedHardRate',
+    date: 'date',
+  };
+
+  const sortKey = keyMap[selectedSortCategory.value];
+  const order = sortOrder.value[selectedSortCategory.value];
+  return [...datasetResults.value].sort((a, b) => {
+    if (sortKey === 'date') {
+      return order === 'asc'
+        ? new Date(a.date).getTime() - new Date(b.date).getTime()
+        : new Date(b.date).getTime() - new Date(a.date).getTime();
+    }
+    return order === 'asc' ? a[sortKey] - b[sortKey] : b[sortKey] - a[sortKey];
+  });
+});
+
+// 处理点击排序
+function sortColumn(category: string) {
+  selectedSortCategory.value = category;
+  sortOrder.value[category] = sortOrder.value[category] === 'desc' ? 'asc' : 'desc';
+  console.log(sortedResults)
+}
+
+
 </script>
 
 <style lang="scss">
@@ -207,5 +284,26 @@ ul.tab li.disabled {
   pointer-events: none;
   opacity: 0.5;
 }
+
+.sort-icon {
+  color: gray; /* 默认灰色 */
+  margin-left: -2px;
+  transition: transform 0.3s ease;  /* 过渡动画 */
+  display: inline-block;
+}
+
+.sort-icon.asc {
+  transform: rotate(180deg); /* 向上箭头 */
+}
+
+.sort-icon.desc {
+  transform: rotate(0deg);  /* 向下箭头 */
+}
+
+.sort-icon.selected {
+  color: #14c659; /* 选中的列变成绿色 */
+  font-weight: bold;
+}
+
 
 </style>
