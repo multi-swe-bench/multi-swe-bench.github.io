@@ -51,7 +51,7 @@
         <ol>
           <li>Fork the <a target="_blank" rel="noopener noreferrer" href="https://github.com/multi-swe-bench/experiments">Multi-SWE-bench/experiments</a> repository.</li>
           <li>Clone the repository. Due to this repository's large diff history, consider using `git clone --depth 1` if cloning takes too long.</li>
-          <li>Under the split that you evaluate on (<code>evaluation/java/verified/</code> or <code>evaluation/go/verified</code>), create a new folder with the submission date and the model name (e.g. <code>20250329_Agentless_Claude-3.7-Sonnet</code>).</li>
+          <li>Under the split that you evaluate on (e.g. <code>evaluation/java/verified/</code>), create a new folder with the submission date and the model name (e.g. <code>20250329_Agentless_Claude-3.7-Sonnet</code>).</li>
           <li>Within the folder, please include the following files:
             <ul>
               <li><code>all_preds.jsonl</code>: Model predictions</li>
@@ -122,7 +122,7 @@
           If you are interested in receiving the "verified" checkmark ✓ on your submission, please do the following:
         </p>
         <ol>
-          <li>Create an issue</li>
+          <li>Create an issue.</li>
           <li>In the issue, provide us instructions on how to run your model on Multi-SWE-bench.</li>
           <li>We will run your model on a random subset of Multi-SWE-bench and verify the results.</li>
         </ol>
