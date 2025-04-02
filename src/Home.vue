@@ -120,8 +120,6 @@
           were able to reproduce the patch generations.
           <br>
           - <span style="color:var(--dark_accent_color);"><b>🤠 Open</b></span> refers to submissions that have open-source code. This does <i>not</i> necessarily mean the underlying model is open-source.
-          <br>
-          - <span style="color:var(--dark_accent_color);"><b>🆕 New</b></span> refers to the most recently submitted solutions.
 
           <br>
           <br>
