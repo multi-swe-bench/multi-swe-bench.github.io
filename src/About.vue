@@ -3,8 +3,8 @@
     <div class="content-box">
       <h2 class="text-title">About</h2>
       <p class="text-content">
-        Multi-SWE-bench is a dataset that tests systems' ability to solve GitHub issues automatically.
-        The dataset collects 1632 Issue-Pull Request pairs from 39 popular repositories across seven widely used programming languages: Java, TypeScript, JavaScript, Go, Rust, C, and C++.
+        Multi-SWE-bench is a dataset that tests LLMs' capability to solve GitHub issues automatically.
+        The dataset collects 1,632 Issue-Pull Request pairs from 39 popular repositories across seven widely used programming languages: Java, TypeScript, JavaScript, Go, Rust, C, and C++.
         Evaluation is performed by verifying the project's built-in test suite results, using post-PR behavior as the reference solution.
         Read more about Multi-SWE-bench in our <a href="https://arxiv.org/abs/2310.06770" target="_blank">paper</a>!
       </p>
@@ -35,7 +35,7 @@
       <p class="text-content">
         Correspondence to: <a href="mailto:zandaoguang@bytedance.com">zandaoguang@bytedance.com</a> and <a href="mailto:shen.kai@bytedance.com">shen.kai@bytedance.com</a>
         <br/>
-        If you're interested, feel free to join our discussions on <a href="https://discord.gg/HEU3gvyXUf">Discord</a>.
+        If you're interested, feel free to join our discussions on <a href="https://discord.gg/EtfbkfqUuN">Discord</a>.
       </p>
       <div class="content-wrapper" style="display: flex; flex-direction: row;">
         <a href="https://team.doubao.com/" title="Bytedance Seed">
