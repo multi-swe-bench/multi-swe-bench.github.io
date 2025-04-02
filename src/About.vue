@@ -33,7 +33,7 @@
         We express our deepest gratitude to the creators of the SWE-bench dataset.
       </p>
       <p class="text-content">
-        Correspondence to: <a href="mailto:zandaoguang@bytedance.com">zandaoguang@bytedance.com</a>
+        Correspondence to: <a href="mailto:zandaoguang@bytedance.com">zandaoguang@bytedance.com</a> and <a href="mailto:shen.kai@bytedance.com">shen.kai@bytedance.com</a>
         <br/>
         If you're interested, feel free to join our discussions on <a href="https://discord.gg/HEU3gvyXUf">Discord</a>.
       </p>
