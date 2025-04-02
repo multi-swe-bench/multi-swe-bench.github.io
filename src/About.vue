@@ -4,7 +4,7 @@
       <h2 class="text-title">About</h2>
       <p class="text-content">
         Multi-SWE-bench is a dataset that tests systems' ability to solve GitHub issues automatically.
-        The dataset collects 1727 Issue-Pull Request pairs from 39 popular repositories across seven widely used programming languages: Java, TypeScript, JavaScript, Go, Rust, C, and C++.
+        The dataset collects 1632 Issue-Pull Request pairs from 39 popular repositories across seven widely used programming languages: Java, TypeScript, JavaScript, Go, Rust, C, and C++.
         Evaluation is performed by verifying the project's built-in test suite results, using post-PR behavior as the reference solution.
         Read more about Multi-SWE-bench in our <a href="https://arxiv.org/abs/2310.06770" target="_blank">paper</a>!
       </p>
