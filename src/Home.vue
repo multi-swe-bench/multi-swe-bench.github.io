@@ -201,9 +201,11 @@ const sortedResults = computed(() => {
 
 // 处理点击排序
 function sortColumn(category: string) {
-  selectedSortCategory.value = category;
-  sortOrder.value[category] = sortOrder.value[category] === 'desc' ? 'asc' : 'desc';
-  console.log(sortedResults)
+    if (selectedSortCategory.value === category) {
+    sortOrder.value[category] = sortOrder.value[category] === 'desc' ? 'asc' : 'desc';
+  } else {
+    selectedSortCategory.value = category;
+  }
 }
 
 

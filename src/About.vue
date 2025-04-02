@@ -28,7 +28,7 @@
         Multi-SWE-bench, including but not limited to, any loss of profit, data,
         or use of data.
         <br/><br/>
-        <b>Acknowledgements:</b>This leaderboard is a modified version based on the <a href="https://swebench.com">SWE-bench leaderboard</a>,
+        <b>Acknowledgements:</b> This leaderboard is a modified version based on the <a href="https://swebench.com">SWE-bench leaderboard</a>,
         and we are using this template with the explicit permission of the SWE-bench team. 
         We express our deepest gratitude to the creators of the SWE-bench dataset.
       </p>
