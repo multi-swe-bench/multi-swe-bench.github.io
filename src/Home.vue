@@ -1,13 +1,6 @@
 <template>
   <Header></Header>
   <section class="main-container">
-    <!-- <div class="content-wrapper" style="display: flex; justify-content: center; align-items: center;">
-      <div style="background-color: black; padding: 1.5em 1em; color: white; border-radius: 1em; text-align: center; width: 82%;">
-        📣 [08/2024] We’ve released the JAVA version of <a rel="noopener noreferrer" target="_blank" style="color:var(--dark_accent_color)" href="https://www.swebench.com">SWE-bench</a>!
-        Check it out on <a target="_blank" rel="noopener noreferrer" style="color:var(--dark_accent_color)" href="https://huggingface.co/datasets/Daoguang/multi-swe-bench">Hugging Face</a>.
-        For more details, see our <a target="_blank" rel="noopener noreferrer" style="color:var(--dark_accent_color)" href="https://arxiv.org/abs/2408.14354">paper</a>.
-      </div>
-    </div> -->
     <div class="content-wrapper">
       <div class="content-box" v-if="leaderboard">
         <h2 class="text-title">Leaderboard</h2>
@@ -114,7 +107,7 @@
         <p class="text-content">
           - The <span style="color:var(--dark_accent_color);"><b>% Resolved</b></span> metric is the percentage of instances
           (<b>500</b> for Python, <b>128</b> for Java, <b>224</b> for TypeScript, <b>356</b> for JavaScript, <b>428</b> for Go, <b>239</b> for Rust, <b>128</b> for C, <b>129</b> for C++) <i>solved</i> by the model.
-          <b>Overall</b> represents all instances, while <b>Easy</b>, <b>Medium</b>, and <b>Hard</b> denote instances at different difficulty levels.
+          <b>Overall</b> represents all instances within each language, while <b>Easy</b>, <b>Medium</b>, and <b>Hard</b> denote instances at different difficulty levels.
           <br>
           - <span style="color:var(--dark_accent_color);"><b>✅ Checked</b></span> indicates that we, the Multi-SWE-bench team, received access to the system and
           were able to reproduce the patch generations.
@@ -124,7 +117,7 @@
           <br>
           <br>
 
-          If you'd like to submit to the leaderboard, please check <router-link to="/submit">this</router-link> page.
+          If you'd like to submit to the leaderboard, please check <router-link to="/submit">this page</router-link>.
           All submissions are Pass@1, do not use
           <code style="color:black;background-color:#ddd;border-radius: 0.25em">hints_text</code>,
           and are in the unassisted setting.

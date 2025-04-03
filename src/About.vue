@@ -3,10 +3,10 @@
     <div class="content-box">
       <h2 class="text-title">About</h2>
       <p class="text-content">
-        Multi-SWE-bench is a dataset that tests LLMs' capability to solve GitHub issues automatically.
-        The dataset collects 1,632 Issue-Pull Request pairs from 39 popular repositories across seven widely used programming languages: Java, TypeScript, JavaScript, Go, Rust, C, and C++.
+        Multi-SWE-Bench is a benchmark for evaluating the issue-resolving capabilities of LLMs across multiple programming languages.
+        The dataset consists of 1,632 issue-resolving tasks spanning 7 programming languages: Java, TypeScript, JavaScript, Go, Rust, C, and C++.
         Evaluation is performed by verifying the project's built-in test suite results, using post-PR behavior as the reference solution.
-        Read more about Multi-SWE-bench in our <a href="https://arxiv.org/abs/2310.06770" target="_blank">paper</a>!
+        Read more about Multi-SWE-bench in our <a href="https://arxiv.org/abs/xxx" target="_blank">paper</a>!
       </p>
       <h3 class="text-title">Citation</h3>
       If you found our <a href="https://multi-swe-bench.github.io">Multi-SWE-bench</a> helpful for your work, please cite as follows:
@@ -20,6 +20,15 @@
       archivePrefix={arXiv},
       primaryClass={cs.SE},
       url={xxx}, 
+}</code></pre>
+<pre id="citation">
+<code>@inproceedings{
+    jimenez2024swebench,
+    title={{SWE}-bench: Can Language Models Resolve Real-world Github Issues?},
+    author={Carlos E Jimenez and John Yang and Alexander Wettig and Shunyu Yao and Kexin Pei and Ofir Press and Karthik R Narasimhan},
+    booktitle={The Twelfth International Conference on Learning Representations},
+    year={2024},
+    url={https://openreview.net/forum?id=VTF8yNQM66}
 }</code></pre>
     <br/>
         <b>Disclaimer:</b> Multi-SWE-bench is for research purposes only. Models
