@@ -21,15 +21,15 @@
       primaryClass={cs.SE},
       url={xxx}, 
 }</code></pre>
-<pre id="citation">
-<code>@inproceedings{
-    jimenez2024swebench,
-    title={{SWE}-bench: Can Language Models Resolve Real-world Github Issues?},
-    author={Carlos E Jimenez and John Yang and Alexander Wettig and Shunyu Yao and Kexin Pei and Ofir Press and Karthik R Narasimhan},
-    booktitle={The Twelfth International Conference on Learning Representations},
-    year={2024},
-    url={https://openreview.net/forum?id=VTF8yNQM66}
-}</code></pre>
+<br/>
+<pre id="citation"><code>@inproceedings{jimenez2024swebench,
+     title={SWE-bench: Can Language Models Resolve Real-world Github Issues?},
+     author={Carlos E Jimenez and John Yang and Alexander Wettig and Shunyu Yao and Kexin Pei and Ofir Press and Karthik R Narasimhan},
+     booktitle={The Twelfth International Conference on Learning Representations},
+     year={2024},
+     url={https://openreview.net/forum?id=VTF8yNQM66}
+ }</code>
+ </pre>
     <br/>
         <b>Disclaimer:</b> Multi-SWE-bench is for research purposes only. Models
         evaluated on Multi-SWE-bench may produce unexpected results.
