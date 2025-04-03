@@ -281,22 +281,22 @@ function aggregateModelResults(allLeaderboards) {
       date: modelMap[name].date,
     }));
 }
- watch(allLeaderboards, () => {
-   aggregateModelResults(allLeaderboards);
-   allModelResults.value.sort((a, b) => b.resolved - a.resolved);
-   const newLanguage = {
-   name: 'Ranking',
-   data: [
-     {
-       results: allModelResults // 将模型统计结果插入
-     }
-   ]
- };
-   if(allLeaderboards.value){
-     allLeaderboards.value.unshift(newLanguage);
-     console.log(allLeaderboards)
-   }
- }, { immediate: true }); // { immediate: true } 会在一开始就执行一次计算
+watch(allLeaderboards, () => {
+  aggregateModelResults(allLeaderboards);
+  allModelResults.value.sort((a, b) => b.resolved - a.resolved);
+  const newLanguage = {
+  name: 'Ranking',
+  data: [
+    {
+      results: allModelResults // 将模型统计结果插入
+    }
+  ]
+};
+  if(allLeaderboards.value){
+    allLeaderboards.value.unshift(newLanguage);
+    console.log(allLeaderboards)
+  }
+}, { immediate: true }); // { immediate: true } 会在一开始就执行一次计算
 console.log(allModelResults)
 </script>
 
