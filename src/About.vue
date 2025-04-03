@@ -11,8 +11,7 @@
       <h3 class="text-title">Citation</h3>
       If you found the <a href="https://multi-swe-bench.github.io">Multi-SWE-bench</a> and <a href="https://www.swebench.com">SWE-bench</a> helpful for your work, please cite as follows:
       <p class="text-content">
-<pre id="citation">
-<code>@misc{zan2025multiswebench,
+<pre id="citation"><code>@misc{zan2025multiswebench,
       title={Multi-SWE-bench: A Multilingual Benchmark for Issue Resolving}, 
       author={Xxx},
       year={2025},
