@@ -28,8 +28,7 @@
      booktitle={The Twelfth International Conference on Learning Representations},
      year={2024},
      url={https://openreview.net/forum?id=VTF8yNQM66}
- }</code>
- </pre>
+}</code></pre>
     <br/>
         <b>Disclaimer:</b> Multi-SWE-bench is for research purposes only. Models
         evaluated on Multi-SWE-bench may produce unexpected results.
