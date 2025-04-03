@@ -106,7 +106,7 @@
 
         <p class="text-content">
           - <span style="color:var(--dark_accent_color);"><b>% Resolved</b></span> denotes the proportion of successfully solved instances per language (Python: <b>500</b>, Java: <b>128</b>, TypeScript: <b>224</b>, JavaScript: <b>356</b>, Go: <b>428</b>, Rust: <b>239</b>, C: <b>128</b>, C++: <b>129</b>).
-          <b>Overall</b> includes all instances for each language, while </b>Easy</b>, </b>Medium</b>, and </b>Hard</b> correspond to subsets categorized by difficulty level.
+          <b>Overall</b> includes all instances for each language, while <b>Easy</b>, <b>Medium</b>, and <b>Hard</b> correspond to subsets categorized by difficulty level.
           <br>
           - <span style="color:var(--dark_accent_color);"><b>✅ Checked</b></span> indicates that we, the Multi-SWE-bench team, received access to the system and
           were able to reproduce the patch generations.
