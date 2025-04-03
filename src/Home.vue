@@ -86,7 +86,10 @@
                   <template v-else> - </template>
                 </td>
                 <td>
+                  <template v-if="item.date">
                   <span class="label-date">{{ item.date }}</span>
+                  </template>
+                  <template v-else> - </template>
                 </td>
                 <td class="text-center">
                   <template v-if="item.hasLogs">
@@ -148,18 +151,16 @@ import Resources from './Resources.vue'
 const { allLeaderboards, selectedCategory, leaderboard, languageData, datasetResults, language, dataset, total} = useAllLeaderboard()
 const GITHUB_URL = 'https://github.com/multi-swe-bench/experiments/tree/main/evaluation'
 console.log({ allLeaderboards, selectedCategory, leaderboard, languageData, datasetResults, language, dataset, total});
-import { ref,computed } from 'vue';
+import { ref,computed, watch } from 'vue';
 
-// 初始化排序状态
 const sortOrder = ref({
-  overall: 'desc',  // 初始为降序
+  overall: 'desc',
   easy: 'desc',
   medium: 'desc',
   hard: 'desc',
   date: 'desc',
 });
 
-// 获取图标的 CSS 类
 const getSortIconClass = (category: string) => {
   return {
     'sort-icon': true,  // 基础类，始终应用
@@ -169,10 +170,8 @@ const getSortIconClass = (category: string) => {
   };
 };
 
-// 当前选中的排序类别
 const selectedSortCategory = ref('overall');
 
-// 计算排序后的数据
 const sortedResults = computed(() => {
   if (!Array.isArray(datasetResults.value) || datasetResults.value.length === 0) {
     return [];
@@ -197,7 +196,6 @@ const sortedResults = computed(() => {
   });
 });
 
-// 处理点击排序
 function sortColumn(category: string) {
     if (selectedSortCategory.value === category) {
     sortOrder.value[category] = sortOrder.value[category] === 'desc' ? 'asc' : 'desc';
@@ -207,6 +205,104 @@ function sortColumn(category: string) {
 }
 
 
+// 初始化一个空的结果集合
+const allModelResults = ref([]);
+
+// 遍历 allLeaderboards 计算每个模型的综合结果
+function aggregateModelResults(allLeaderboards) {
+  if (!Array.isArray(datasetResults.value) || datasetResults.value.length === 0) {
+    return [];
+  }
+  let num = 0
+  let totalNum = 0
+  let easyNum = 0
+  let mediumNum = 0
+  let highNum = 0
+  console.log("this is continue")
+  const modelMap = {};  // 存储模型的累计结果
+  const modelNames = new Set();  // 存储所有模型名称
+  const languageCount = allLeaderboards.value.length;  // 语言数量
+  const allLeaderboardsValue = allLeaderboards.value
+  // 遍历所有语言的结果
+  allLeaderboardsValue.forEach(leaderboard => {
+    leaderboard.data.forEach(languageData => {
+      console.log(languageData.name)
+      totalNum += languageData.data.all_ids.length
+      easyNum += languageData.data.easy_ids.length
+      mediumNum += languageData.data.medium_ids.length
+      highNum += languageData.data.hard_ids.length
+      languageData.results.forEach(result => {
+        const { resolved, resolvedEasy, resolvedMedium, resolvedHard,site,orgIcon, date} = result;
+        let {name} = result
+        if (!name.startsWith('M')) {
+          name = 'm' + name.toLowerCase()
+        }else{
+          name = name.toLowerCase()
+        }
+
+        // 初始化模型数据，如果是第一次看到这个模型
+        if (!modelMap[name]) {
+          modelMap[name] = {
+            resolved: 0,
+            resolvedEasy: 0,
+            resolvedMedium: 0,
+            resolvedHard: 0,
+            resolvedEasyRate: 0,
+            resolvedMediumRate: 0,
+            resolvedHardRate: 0,
+            count: 0, // 统计每个模型出现过的语言数
+            site: site,
+            orgIcon: orgIcon,
+            date: date
+          };
+        }
+
+        // 累加当前语言的模型分数
+        modelMap[name].resolved += resolved;
+        modelMap[name].resolvedEasy += resolvedEasy;
+        modelMap[name].resolvedMedium += resolvedMedium;
+        modelMap[name].resolvedHard += resolvedHard;
+        modelMap[name].count += 1;
+        modelMap[name].date = modelMap[name].date > date ? modelMap[name].date : date
+        modelNames.add(name);
+        num = num +1
+      });
+    });
+  });
+  allModelResults.value = Object.keys(modelMap)
+    .filter(name => modelMap[name].count === languageCount) // 只保留在每个语言中都存在的模型
+    .map(name => ({
+      name,
+      resolved: modelMap[name].resolved,
+      resolvedEasy: modelMap[name].resolvedEasy,
+      resolvedMedium: modelMap[name].resolvedMedium,
+      resolvedHard: modelMap[name].resolvedHard,
+      resolvedRate: modelMap[name].resolved / totalNum,
+      resolvedEasyRate: modelMap[name].resolvedEasy / easyNum,
+      resolvedMediumRate: modelMap[name].resolvedMedium / mediumNum,
+      resolvedHardRate: modelMap[name].resolvedHard / highNum,
+      site: modelMap[name].site,
+      orgIcon: modelMap[name].orgIcon,
+      date: modelMap[name].date,
+    }));
+}
+// watch(allLeaderboards, () => {
+//   aggregateModelResults(allLeaderboards);
+//   allModelResults.value.sort((a, b) => b.resolved - a.resolved);
+//   const newLanguage = {
+//   name: 'Ranking',
+//   data: [
+//     {
+//       results: allModelResults // 将模型统计结果插入
+//     }
+//   ]
+// };
+//   if(allLeaderboards.value){
+//     allLeaderboards.value.unshift(newLanguage);
+//     console.log(allLeaderboards)
+//   }
+// }, { immediate: true }); // { immediate: true } 会在一开始就执行一次计算
+console.log(allModelResults)
 </script>
 
 <style lang="scss">
