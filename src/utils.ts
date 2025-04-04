@@ -267,7 +267,7 @@ function aggregateModelResults(allLeaderboards,allModelResults) {
       mediumNum += languageData.data.medium_ids.length
       highNum += languageData.data.hard_ids.length
       languageData.results.forEach(result => {
-        const { name, resolved, resolvedEasy, resolvedMedium, resolvedHard,site,orgIcon, date} = result;
+        const { name, resolved, resolvedEasy, resolvedMedium, resolvedHard, site, orgIcon, date, oss, verified} = result;
         // let {name} = result
         // if (!name.startsWith('M')) {
         //   name = 'm' + name.toLowerCase()
@@ -288,7 +288,9 @@ function aggregateModelResults(allLeaderboards,allModelResults) {
             count: 0, // 统计每个模型出现过的语言数
             site: site,
             orgIcon: orgIcon,
-            date: date
+            date: date,
+            oss: oss,
+            verified: verified,
           };
         }
 
@@ -298,7 +300,7 @@ function aggregateModelResults(allLeaderboards,allModelResults) {
         modelMap[name].resolvedMedium += resolvedMedium;
         modelMap[name].resolvedHard += resolvedHard;
         modelMap[name].count += 1;
-        modelMap[name].date = modelMap[name].date > date ? modelMap[name].date : date
+        modelMap[name].date = modelMap[name].date > date ? modelMap[name].date : date;
         modelNames.add(name);
         num = num +1
       });
@@ -319,5 +321,7 @@ function aggregateModelResults(allLeaderboards,allModelResults) {
       site: modelMap[name].site,
       orgIcon: modelMap[name].orgIcon,
       date: modelMap[name].date,
+      oss: modelMap[name].oss,
+      verified: modelMap[name].verified,
     }));
 }
