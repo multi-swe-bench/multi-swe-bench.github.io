@@ -34,7 +34,7 @@
       <div class="content-wrapper" style="margin-top: 2em">
 
     <!-- Paper-->
-    <a href="https://arxiv.org/abs/xxxx.xxxxx">
+    <a href="https://arxiv.org/abs/2504.02605">
       <button class="outline">
         <i class="fa fa-paperclip"></i> Paper&nbsp;
       </button>
