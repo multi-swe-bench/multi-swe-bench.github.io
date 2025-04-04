@@ -105,6 +105,7 @@ export function useVisualLeaderboard() {
 export function useAllLeaderboard() {
   // 新增变量
   const allLeaderboards = ref<any[]>()
+  const allModelResults = ref([]);
   const selectedCategory = ref<string>() // 用于存储外层分类 (如"text")
   
   // 直接返回顶层数组作为leaderboard，这样导航栏会显示不同的语言选项
@@ -213,6 +214,20 @@ export function useAllLeaderboard() {
   onMounted(async () => {
     const response = await fetch('https://raw.githubusercontent.com/multi-swe-bench/experiments/refs/heads/dist/leaderboard.json')
     allLeaderboards.value = await response.json()
+     aggregateModelResults(allLeaderboards,allModelResults);
+      allModelResults.value.sort((a, b) => b.resolved - a.resolved);
+      const newLanguage = {
+      name: 'All',
+      data: [
+        {
+          results: allModelResults // 将模型统计结果插入
+        }
+      ]
+    };
+      if(allLeaderboards.value){
+        allLeaderboards.value.unshift(newLanguage);
+        console.log(allLeaderboards)
+      }
     console.log(allLeaderboards.value)
   })
 
@@ -230,4 +245,79 @@ export function useAllLeaderboard() {
     modelData, 
     total 
   }
+}
+
+function aggregateModelResults(allLeaderboards,allModelResults) {
+  let num = 0
+  let totalNum = 0
+  let easyNum = 0
+  let mediumNum = 0
+  let highNum = 0
+  console.log("this is continue")
+  const modelMap = {};  // 存储模型的累计结果
+  const modelNames = new Set();  // 存储所有模型名称
+  const languageCount = allLeaderboards.value.length;  // 语言数量
+  const allLeaderboardsValue = allLeaderboards.value
+  // 遍历所有语言的结果
+  allLeaderboardsValue.forEach(leaderboard => {
+    leaderboard.data.forEach(languageData => {
+      console.log(languageData.name)
+      totalNum += languageData.data.all_ids.length
+      easyNum += languageData.data.easy_ids.length
+      mediumNum += languageData.data.medium_ids.length
+      highNum += languageData.data.hard_ids.length
+      languageData.results.forEach(result => {
+        const { resolved, resolvedEasy, resolvedMedium, resolvedHard,site,orgIcon, date} = result;
+        let {name} = result
+        if (!name.startsWith('M')) {
+          name = 'm' + name.toLowerCase()
+        }else{
+          name = name.toLowerCase()
+        }
+
+        // 初始化模型数据，如果是第一次看到这个模型
+        if (!modelMap[name]) {
+          modelMap[name] = {
+            resolved: 0,
+            resolvedEasy: 0,
+            resolvedMedium: 0,
+            resolvedHard: 0,
+            resolvedEasyRate: 0,
+            resolvedMediumRate: 0,
+            resolvedHardRate: 0,
+            count: 0, // 统计每个模型出现过的语言数
+            site: site,
+            orgIcon: orgIcon,
+            date: date
+          };
+        }
+
+        // 累加当前语言的模型分数
+        modelMap[name].resolved += resolved;
+        modelMap[name].resolvedEasy += resolvedEasy;
+        modelMap[name].resolvedMedium += resolvedMedium;
+        modelMap[name].resolvedHard += resolvedHard;
+        modelMap[name].count += 1;
+        modelMap[name].date = modelMap[name].date > date ? modelMap[name].date : date
+        modelNames.add(name);
+        num = num +1
+      });
+    });
+  });
+  allModelResults.value = Object.keys(modelMap)
+    .filter(name => modelMap[name].count === languageCount) // 只保留在每个语言中都存在的模型
+    .map(name => ({
+      name,
+      resolved: modelMap[name].resolved,
+      resolvedEasy: modelMap[name].resolvedEasy,
+      resolvedMedium: modelMap[name].resolvedMedium,
+      resolvedHard: modelMap[name].resolvedHard,
+      resolvedRate: modelMap[name].resolved / totalNum,
+      resolvedEasyRate: modelMap[name].resolvedEasy / easyNum,
+      resolvedMediumRate: modelMap[name].resolvedMedium / mediumNum,
+      resolvedHardRate: modelMap[name].resolvedHard / highNum,
+      site: modelMap[name].site,
+      orgIcon: modelMap[name].orgIcon,
+      date: modelMap[name].date,
+    }));
 }
