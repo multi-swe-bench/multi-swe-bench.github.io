@@ -25,7 +25,7 @@
 
 This repository contains the code for the website and leaderboard of the Multi-SWE-bench project.
 
-To learn more about Multi-SWE-bench, please check out the main code [repository](https://github.com/multi-swe-bench/multi-swe-bench) along with the main paper, [Multi-SWE-bench: A Multilingual Benchmark for Issue Resolving](https://arxiv.org/abs/2310.06770).
+To learn more about Multi-SWE-bench, please check out the main code [repository](https://github.com/multi-swe-bench/multi-swe-bench) along with the main paper, [Multi-SWE-bench: A Multilingual Benchmark for Issue Resolving](https://arxiv.org/abs/2504.02605).
 
 ## 🙏 Acknowledgements
 We express our deepest gratitude to the creators of the [SWE-bench](https://www.swebench.com) dataset. This repository is a modified version of their original [website repository](https://github.com/SWE-bench/swe-bench.github.io). 
