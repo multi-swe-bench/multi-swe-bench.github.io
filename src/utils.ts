@@ -267,13 +267,13 @@ function aggregateModelResults(allLeaderboards,allModelResults) {
       mediumNum += languageData.data.medium_ids.length
       highNum += languageData.data.hard_ids.length
       languageData.results.forEach(result => {
-        const { resolved, resolvedEasy, resolvedMedium, resolvedHard,site,orgIcon, date} = result;
-        let {name} = result
-        if (!name.startsWith('M')) {
-          name = 'm' + name.toLowerCase()
-        }else{
-          name = name.toLowerCase()
-        }
+        const { name, resolved, resolvedEasy, resolvedMedium, resolvedHard,site,orgIcon, date} = result;
+        // let {name} = result
+        // if (!name.startsWith('M')) {
+        //   name = 'm' + name.toLowerCase()
+        // }else{
+        //   name = name.toLowerCase()
+        // }
 
         // 初始化模型数据，如果是第一次看到这个模型
         if (!modelMap[name]) {
