@@ -33,11 +33,11 @@ Additionally, we would like to thank the creators of the [SQuAD](https://rajpurk
 
 ## 📄 Citation
 
-If you found [SWE-bench](https://arxiv.org/abs/2310.06770) or [Multi-SWE-bench](https://arxiv.org/abs/2408.14354) helpful for your work, please cite as follows:
+If you found [SWE-bench](https://arxiv.org/abs/2310.06770) or [Multi-SWE-bench](https://arxiv.org/abs/2504.02605) helpful for your work, please cite as follows:
 
 ```
 @inproceedings{jimenez2024swebench,
-    title={{SWE}-bench: Can Language Models Resolve Real-world Github Issues?},
+    title={SWE-bench: Can Language Models Resolve Real-world Github Issues?},
     author={Carlos E Jimenez and John Yang and Alexander Wettig and Shunyu Yao and Kexin Pei and Ofir Press and Karthik R Narasimhan},
     booktitle={The Twelfth International Conference on Learning Representations},
     year={2024},
@@ -46,14 +46,14 @@ If you found [SWE-bench](https://arxiv.org/abs/2310.06770) or [Multi-SWE-bench](
 ```
 
 ```
-@misc{zan2024swebenchjava,
-      title={SWE-bench-java: A GitHub Issue Resolving Benchmark for Java}, 
-      author={Daoguang Zan and Zhirong Huang and Ailun Yu and Shaoxin Lin and Yifan Shi and Wei Liu and Dong Chen and Zongshuai Qi and Hao Yu and Lei Yu and Dezhi Ran and Muhan Zeng and Bo Shen and Pan Bian and Guangtai Liang and Bei Guan and Pengjie Huang and Tao Xie and Yongji Wang and Qianxiang Wang},
-      year={2024},
-      eprint={2408.14354},
+@misc{zan2025multiswebench,
+      title={Multi-SWE-bench: A Multilingual Benchmark for Issue Resolving}, 
+      author={Daoguang Zan and Zhirong Huang and Wei Liu and Hanwu Chen and Linhao Zhang and Shulin Xin and Lu Chen and Qi Liu and Xiaojian Zhong and Aoyan Li and Siyao Liu and Yongsheng Xiao and Liangqiang Chen and Yuyu Zhang and Jing Su and Tianyu Liu and Rui Long and Kai Shen and Liang Xiang},
+      year={2025},
+      eprint={2504.02605},
       archivePrefix={arXiv},
       primaryClass={cs.SE},
-      url={https://arxiv.org/abs/2408.14354}, 
+      url={https://arxiv.org/abs/2504.02605}, 
 }
 ```
 ## 📜 License
