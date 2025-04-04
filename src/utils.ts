@@ -253,12 +253,10 @@ function aggregateModelResults(allLeaderboards,allModelResults) {
   let easyNum = 0
   let mediumNum = 0
   let highNum = 0
-  console.log("this is continue")
-  const modelMap = {};  // 存储模型的累计结果
-  const modelNames = new Set();  // 存储所有模型名称
-  const languageCount = allLeaderboards.value.length;  // 语言数量
+  const modelMap = {};
+  const modelNames = new Set();
+  const languageCount = allLeaderboards.value.length;
   const allLeaderboardsValue = allLeaderboards.value
-  // 遍历所有语言的结果
   allLeaderboardsValue.forEach(leaderboard => {
     leaderboard.data.forEach(languageData => {
       console.log(languageData.name)
@@ -268,14 +266,8 @@ function aggregateModelResults(allLeaderboards,allModelResults) {
       highNum += languageData.data.hard_ids.length
       languageData.results.forEach(result => {
         const { name, resolved, resolvedEasy, resolvedMedium, resolvedHard, site, orgIcon, date, oss, verified} = result;
-        // let {name} = result
-        // if (!name.startsWith('M')) {
-        //   name = 'm' + name.toLowerCase()
-        // }else{
-        //   name = name.toLowerCase()
-        // }
 
-        // 初始化模型数据，如果是第一次看到这个模型
+        // init
         if (!modelMap[name]) {
           modelMap[name] = {
             resolved: 0,
@@ -285,7 +277,7 @@ function aggregateModelResults(allLeaderboards,allModelResults) {
             resolvedEasyRate: 0,
             resolvedMediumRate: 0,
             resolvedHardRate: 0,
-            count: 0, // 统计每个模型出现过的语言数
+            count: 0, // count
             site: site,
             orgIcon: orgIcon,
             date: date,
@@ -294,20 +286,23 @@ function aggregateModelResults(allLeaderboards,allModelResults) {
           };
         }
 
-        // 累加当前语言的模型分数
+        // score
         modelMap[name].resolved += resolved;
         modelMap[name].resolvedEasy += resolvedEasy;
         modelMap[name].resolvedMedium += resolvedMedium;
         modelMap[name].resolvedHard += resolvedHard;
         modelMap[name].count += 1;
         modelMap[name].date = modelMap[name].date > date ? modelMap[name].date : date;
+        if(!verified){
+          modelMap[name].verified = verified
+        }
         modelNames.add(name);
         num = num +1
       });
     });
   });
   allModelResults.value = Object.keys(modelMap)
-    .filter(name => modelMap[name].count === languageCount) // 只保留在每个语言中都存在的模型
+    .filter(name => modelMap[name].count === languageCount) // filter
     .map(name => ({
       name,
       resolved: modelMap[name].resolved,
