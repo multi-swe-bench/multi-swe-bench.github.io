@@ -13,12 +13,12 @@
       <p class="text-content">
 <pre id="citation"><code>@misc{zan2025multiswebench,
       title={Multi-SWE-bench: A Multilingual Benchmark for Issue Resolving}, 
-      author={Xxx},
+      author={Daoguang Zan and Zhirong Huang and Wei Liu and Hanwu Chen and Linhao Zhang and Shulin Xin and Lu Chen and Qi Liu and Xiaojian Zhong and Aoyan Li and Siyao Liu and Yongsheng Xiao and Liangqiang Chen and Yuyu Zhang and Jing Su and Tianyu Liu and Rui Long and Kai Shen and Liang Xiang},
       year={2025},
-      eprint={2503.17315},
+      eprint={2504.02605},
       archivePrefix={arXiv},
       primaryClass={cs.SE},
-      url={xxx}, 
+      url={https://arxiv.org/abs/2504.02605},
 }</code></pre>
 <br/>
 <pre id="citation"><code>@inproceedings{jimenez2024swebench,
