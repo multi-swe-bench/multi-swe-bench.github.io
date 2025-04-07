@@ -53,7 +53,7 @@
         <i class="fa fa-database"></i> Data&nbsp;
       </button>
     </a>
-<!--       <a href="https://arxiv.org/abs/xxxx.xxxxx">
+<!--       <a href="https://arxiv.org/abs/2504.02605">
           <button class="outline">
             <i class="fa fa-paperclip"></i> Paper&nbsp;
           </button>

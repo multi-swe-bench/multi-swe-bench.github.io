@@ -12,7 +12,7 @@
             Home&nbsp;
           </button>
         </router-link>
-        <a target="_blank" rel="noopener noreferrer" href="https://arxiv.org/abs/xxxx.xxxxx">
+        <a target="_blank" rel="noopener noreferrer" href="https://arxiv.org/abs/2504.02605">
           <button class="outline">
             <i class="fa fa-paperclip"></i> Paper&nbsp;
           </button>

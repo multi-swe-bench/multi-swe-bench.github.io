@@ -6,7 +6,7 @@
         Multi-SWE-Bench is a benchmark for evaluating the issue-resolving capabilities of LLMs across multiple programming languages.
         The dataset consists of 1,632 issue-resolving tasks spanning 7 programming languages: Java, TypeScript, JavaScript, Go, Rust, C, and C++.
         Evaluation is performed by verifying the project's built-in test suite results, using post-PR behavior as the reference solution.
-        Read more about Multi-SWE-bench in our <a href="https://arxiv.org/abs/xxx" target="_blank">paper</a>!
+        Read more about Multi-SWE-bench in our <a href="https://arxiv.org/abs/2504.02605" target="_blank">paper</a>!
       </p>
       <h3 class="text-title">Citation</h3>
       If you found the <a href="https://multi-swe-bench.github.io">Multi-SWE-bench</a> and <a href="https://www.swebench.com">SWE-bench</a> helpful for your work, please cite as follows:
