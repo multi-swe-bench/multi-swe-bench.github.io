@@ -1,10 +1,30 @@
 <template>
   <Header></Header>
   <section class="main-container">
+    <div class="content-wrapper" style="margin-top: 1em; display: flex; justify-content: center; align-items: center;">
+        <button
+            @click="switchLeaderboard('Full')"
+          class="outline teaser swebv"
+          style="flex-direction: row; display: flex; justify-content: center; align-items: center; width: 15em;">
+          <img
+            src="../img/logo-v3.svg"
+            style="height: 1.3em; margin-right: 0.4em; margin-bottom: 0.1em;" />
+            Multi-SWE-bench&nbsp;
+        </button>
+        <button
+            @click="switchLeaderboard('Lite')"
+          class="outline teaser swebl"
+          style="flex-direction: row; display: flex; justify-content: center; align-items: center; width: 15em;">
+          <img
+            src="../img/logo-v3.svg"
+            style="height: 1.3em; margin-right: 0.4em; margin-bottom: 0.1em; background-color: var(--dark_accent_color);" />
+            Multi-SWE-bench mini&nbsp;
+        </button>
+    </div>
     <div class="content-wrapper">
       <div class="content-box" v-if="leaderboard">
-        <h2 class="text-title">Leaderboard</h2>
-        <ul class="tab">
+        <h2 class="text-title">{{LeaderboardName}}</h2>
+        <ul class="tab" v-if="currentMode !== 'Lite'">
           <li
             v-for="{ name, data } in leaderboard"
             :key="name"
@@ -143,8 +163,28 @@ import Resources from './Resources.vue'
 
 // const { leaderboard, languageData, datasetResults, language, dataset, total } = useLeaderboard()
 // const { visual_leaderboard, visual_languageData, visual_datasetResults, visual_language, visual_dataset, visual_total } = useVisualLeaderboard()
-const { allLeaderboards, selectedCategory, leaderboard, languageData, datasetResults, language, dataset, total} = useAllLeaderboard()
-const GITHUB_URL = 'https://github.com/multi-swe-bench/experiments/tree/main/evaluation'
+const { allLeaderboards, selectedCategory, leaderboard, languageData, datasetResults, language, dataset, total, load} = useAllLeaderboard()
+let GITHUB_URL = 'https://github.com/multi-swe-bench/experiments/tree/main/evaluation'
+let LeaderboardName = 'Leaderboard'
+// 模式：默认是 full
+const currentMode = ref<'Full' | 'Lite'>('Full')
+
+// 数据源映射
+const urls = {
+  Full: 'https://github.com/multi-swe-bench/experiments/tree/main/evaluation',
+  Lite: 'https://github.com/multi-swe-bench/experiments/tree/main/evaluation/lite',
+}
+const leadnames = {
+  Full: 'Leaderboard',
+  Lite: 'Leaderboard-mini',
+}
+async function switchLeaderboard(mode: 'Full' | 'Lite') {
+  if (mode === currentMode.value) return
+  currentMode.value = mode
+  load(mode)
+  GITHUB_URL = urls[mode]
+  LeaderboardName = leadnames[mode]
+}
 console.log({ allLeaderboards, selectedCategory, leaderboard, languageData, datasetResults, language, dataset, total});
 import { ref,computed, watch } from 'vue';
 
@@ -297,5 +337,73 @@ ul.tab li.disabled {
   font-weight: bold;
 }
 
+button {
+  cursor: pointer;
+  outline: none;
 
+  &.outline {
+    font-size: 16pt;
+    height: 2em;
+    width: 7em;
+    position: relative;
+    background: transparent;
+    border: 0px;
+    border-radius: 0.5em;
+    padding: 0em 0em;
+    margin: 0.2em 0.5em;
+    transition: background-color 0.1s linear, color 0.1s linear;
+    color: var(--accent_color);
+    background-color: white;
+
+    &.multimodal {
+      color: var(--slate_gray);
+    }
+
+    &.teaser {
+      border: 1px solid transparent; /* Specify border style */
+      border-radius: 0.5em;
+      transition: box-shadow 1s ease, border-color 1s ease;
+      box-shadow: 0px 4px 10px rgba(0, 123, 255, 0.3);
+    }
+  }
+
+  &.outline:hover {
+    color: wheat;
+    border-color: wheat;
+  }
+
+  &.outline.teaser.swebm {
+    background-color: var(--slate_gray);
+    color: white;
+  }
+
+  &.outline.teaser.swebm:hover {
+    color: var(--slate_gray);
+    background: radial-gradient(circle at 10% 30%, rgba(255, 99, 71, 1), transparent 40%),
+    radial-gradient(circle at 30% 70%, rgba(0, 255, 127, 1), transparent 40%),
+    radial-gradient(circle at 50% 30%, rgba(70, 130, 180, 1), transparent 40%),
+    radial-gradient(circle at 70% 70%, rgba(255, 165, 0, 1), transparent 40%),
+    radial-gradient(circle at 80% 30%, rgba(138, 43, 226, 1), transparent 40%);
+    transform: scale(1.05);
+  }
+
+  &.outline.teaser.swebv {
+    background-color: #d1a22b;
+    color: white;
+  }
+
+  &.outline.teaser.swebv:hover {
+    background: linear-gradient(to right, rgb(209, 162, 43), rgb(209, 162, 43), rgb(209, 162, 43));
+    transform: scale(1.05);
+  }
+
+  &.outline.teaser.swebl {
+    background-color: var(--dark_accent_color);
+    color: white;
+  }
+
+  &.outline.teaser.swebl:hover {
+    transform: scale(1.05);
+  }
+}
 </style>

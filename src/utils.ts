@@ -102,7 +102,7 @@ export function useVisualLeaderboard() {
   return { visual_leaderboard, visual_language, visual_dataset, visual_model, visual_languageData, visual_datasetData, visual_datasetResults, visual_modelData, visual_total }
 }
 
-export function useAllLeaderboard() {
+export function useAllLeaderboard(mode: 'Full' | 'Lite' = 'Full') {
   // 新增变量
   const allLeaderboards = ref<any[]>()
   const allModelResults = ref([]);
@@ -211,26 +211,37 @@ export function useAllLeaderboard() {
   })
 
   // 数据加载
-  onMounted(async () => {
-    const response = await fetch('https://raw.githubusercontent.com/multi-swe-bench/experiments/refs/heads/dist/leaderboard.json')
-    allLeaderboards.value = await response.json()
-     aggregateModelResults(allLeaderboards,allModelResults);
-      allModelResults.value.sort((a, b) => b.resolved - a.resolved);
-      const newLanguage = {
-      name: 'All',
-      data: [
-        {
-          results: allModelResults // 将模型统计结果插入
-        }
-      ]
-    };
-      if(allLeaderboards.value){
-        allLeaderboards.value.unshift(newLanguage);
-        console.log(allLeaderboards)
-      }
-    console.log(allLeaderboards.value)
+  onMounted(() => {
+    load(mode)
   })
 
+async function load(mode: 'Full' | 'Lite' = 'Full') {
+  const url = mode === 'Lite'
+    ? 'https://raw.githubusercontent.com/multi-swe-bench/experiments/refs/heads/dist/leaderboard-lite.json'
+    : 'https://raw.githubusercontent.com/multi-swe-bench/experiments/refs/heads/dist/leaderboard.json'
+
+  const response = await fetch(url)
+  allLeaderboards.value = await response.json()
+
+  aggregateModelResults(allLeaderboards, allModelResults)
+  allModelResults.value.sort((a, b) => b.resolved - a.resolved)
+
+  const newLanguage = {
+    name: 'All',
+    data: [
+      {
+        results: allModelResults,
+      },
+    ],
+  }
+
+  if (allLeaderboards.value) {
+    if(mode == 'Full'){
+      allLeaderboards.value.unshift(newLanguage)
+    }
+    console.log('Reloaded allLeaderboards:', allLeaderboards.value)
+  }
+}
   // 返回所有需要的变量和方法
   return { 
     allLeaderboards,
@@ -243,7 +254,8 @@ export function useAllLeaderboard() {
     datasetData, 
     datasetResults, 
     modelData, 
-    total 
+    total,
+    load
   }
 }
 
