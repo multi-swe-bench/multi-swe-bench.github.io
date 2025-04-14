@@ -137,7 +137,7 @@
           <br>
         </span>
     <span v-else>
-      - <span style="color:var(--dark_accent_color);"><b>% Resolved</b></span> denotes the proportion of successfully solved instances per language (Python: <b>50</b>, Java: <b>50</b>, TypeScript: <b>50</b>, JavaScript: <b>50</b>, Go: <b>50</b>, Rust: <b>50</b>, C: <b>50</b>, C++: <b>50</b>).
+      - <span style="color:var(--dark_accent_color);"><b>% Resolved</b></span> denotes the proportion of successfully solved instances per language (<b>50</b> instances per language, across <b>8</b> languages).
       <b>Overall</b> includes all instances for each language, while <b>Easy</b>, <b>Medium</b>, and <b>Hard</b> correspond to subsets categorized by difficulty level.
       <br>
     </span>
