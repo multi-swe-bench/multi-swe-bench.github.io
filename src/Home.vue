@@ -71,7 +71,7 @@
                 </th>
                 <th><div class="sticky-header-content">Org</div></th>
 <!--                <th><div class="sticky-header-content">Date</div></th>-->
-                <th><div class="sticky-header-content" @click="sortColumn('data')">Date<span :class="getSortIconClass('data')" style="margin-left: 2px;font-size: 14px;">▼</span></div></th>
+                <th><div class="sticky-header-content" @click="sortColumn('date')">Date<span :class="getSortIconClass('date')" style="margin-left: 2px;font-size: 14px;">▼</span></div></th>
                 <th><div class="sticky-header-content">Logs</div></th>
                 <th><div class="sticky-header-content">Trajs</div></th>
                 <th><div class="sticky-header-content">Site</div></th>
