@@ -220,7 +220,11 @@ async function load(mode: 'Full' | 'Lite' = 'Full') {
     ? 'https://raw.githubusercontent.com/multi-swe-bench/experiments/refs/heads/dist/leaderboard-mini.json'
     : 'https://raw.githubusercontent.com/multi-swe-bench/experiments/refs/heads/dist/leaderboard.json'
 
-  const response = await fetch(url)
+  const response = await fetch(url, {
+  headers: {
+    'Accept-Language': 'en-US'
+  }
+});
   allLeaderboards.value = await response.json()
 
   aggregateModelResults(allLeaderboards, allModelResults)
