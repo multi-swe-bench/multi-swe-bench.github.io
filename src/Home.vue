@@ -20,6 +20,15 @@
             style="height: 1.3em; margin-right: 0.4em; margin-bottom: 0.1em; background-color: var(--dark_accent_color);" />
             Multi-SWE-bench mini&nbsp;
         </button>
+      <button
+            onclick="window.location.href = 'https://www.swebench.com';"
+          class="outline teaser sweble"
+          style="flex-direction: row; display: flex; justify-content: center; align-items: center; width: 10em;">
+          <img
+            src="../img/swellama.png"
+            style="height: 1.3em; margin-right: 0.4em; margin-bottom: 0.1em;" />
+            SWE-bench&nbsp;
+        </button>
     </div>
     <div class="content-wrapper">
       <div class="content-box" v-if="leaderboard">
@@ -402,13 +411,23 @@ button {
     background: linear-gradient(to right, rgb(209, 162, 43), rgb(209, 162, 43), rgb(209, 162, 43));
     transform: scale(1.05);
   }
-
+//#93cd7c
+  // 5DAEECFF
   &.outline.teaser.swebl {
     background-color: var(--dark_accent_color);
     color: white;
   }
 
   &.outline.teaser.swebl:hover {
+    transform: scale(1.05);
+  }
+
+  &.outline.teaser.sweble {
+    background-color: #1696e1;
+    color: white;
+  }
+
+  &.outline.teaser.sweble:hover {
     transform: scale(1.05);
   }
 }
