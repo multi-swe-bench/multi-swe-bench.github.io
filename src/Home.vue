@@ -21,19 +21,19 @@
             Multi-SWE-bench mini&nbsp;
         </button>
       <button
-            onclick="window.location.href = 'https://www.swebench.com';"
+            @click="switchLeaderboard('Flash')"
           class="outline teaser sweble"
-          style="flex-direction: row; display: flex; justify-content: center; align-items: center; width: 10em;">
+          style="flex-direction: row; display: flex; justify-content: center; align-items: center; width: 15em;">
           <img
-            src="../img/swellama.png"
+            src="../img/logo-v3.svg"
             style="height: 1.3em; margin-right: 0.4em; margin-bottom: 0.1em;" />
-            SWE-bench&nbsp;
+            Multi-SWE-bench flash&nbsp;
         </button>
     </div>
     <div class="content-wrapper">
       <div class="content-box" v-if="leaderboard">
         <h2 class="text-title">{{LeaderboardName}}</h2>
-        <ul class="tab" v-if="currentMode !== 'Lite'">
+        <ul class="tab" v-if="currentMode !== 'Lite' && currentMode !== 'Flash'">
           <li
             v-for="{ name, data } in leaderboard"
             :key="name"
@@ -145,11 +145,11 @@
         <b>Overall</b> includes all instances for each language, while <b>Easy</b>, <b>Medium</b>, and <b>Hard</b> correspond to subsets categorized by difficulty level.
           <br>
         </span>
-    <span v-else>
-      - <span style="color:var(--dark_accent_color);"><b>% Resolved</b></span> denotes the proportion of successfully solved instances per language (<b>50</b> instances per language, across <b>8</b> languages).
-      <b>Overall</b> includes all instances for each language, while <b>Easy</b>, <b>Medium</b>, and <b>Hard</b> correspond to subsets categorized by difficulty level.
-      <br>
-    </span>
+          <span v-else>
+            - <span style="color:var(--dark_accent_color);"><b>% Resolved</b></span> denotes the proportion of successfully solved instances per language (<b>50</b> instances per language, across <b>8</b> languages).
+            <b>Overall</b> includes all instances for each language, while <b>Easy</b>, <b>Medium</b>, and <b>Hard</b> correspond to subsets categorized by difficulty level.
+            <br>
+          </span>
           - <span style="color:var(--dark_accent_color);"><b>✅ Checked</b></span> indicates that we, the Multi-SWE-bench team, received access to the system and
           were able to reproduce the patch generations.
           <br>
@@ -188,12 +188,14 @@ const currentMode = ref<'Full' | 'Lite'>('Full')
 const urls = {
   Full: 'https://github.com/multi-swe-bench/experiments/tree/main/evaluation',
   Lite: 'https://github.com/multi-swe-bench/experiments/tree/main/evaluation/lite',
+  Flash: 'https://github.com/multi-swe-bench/experiments/tree/main/evaluation/flash',
 }
 const leadnames = {
   Full: 'Leaderboard',
   Lite: 'Leaderboard-mini',
+  Flash: 'Leaderboard-flash',
 }
-async function switchLeaderboard(mode: 'Full' | 'Lite') {
+async function switchLeaderboard(mode: 'Full' | 'Lite' | 'Flash') {
   if (mode === currentMode.value) return
   currentMode.value = mode
   load(mode)

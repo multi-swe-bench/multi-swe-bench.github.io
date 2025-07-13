@@ -215,10 +215,13 @@ export function useAllLeaderboard(mode: 'Full' | 'Lite' = 'Full') {
     load(mode)
   })
 
-async function load(mode: 'Full' | 'Lite' = 'Full') {
-  const url = mode === 'Lite'
-    ? 'https://raw.githubusercontent.com/multi-swe-bench/experiments/refs/heads/dist/leaderboard-mini.json'
-    : 'https://raw.githubusercontent.com/multi-swe-bench/experiments/refs/heads/dist/leaderboard.json'
+async function load(mode: 'Full' | 'Lite' | 'Flash') {
+const url = mode === 'Lite'
+  ? 'https://raw.githubusercontent.com/multi-swe-bench/experiments/refs/heads/dist/leaderboard-mini.json'
+  : mode === 'Flash'
+    ? 'https://raw.githubusercontent.com/multi-swe-bench/experiments/refs/heads/dist/leaderboard-flash.json'
+    : 'https://raw.githubusercontent.com/multi-swe-bench/experiments/refs/heads/dist/leaderboard.json';
+
 
   const response = await fetch(url, {
   headers: {
