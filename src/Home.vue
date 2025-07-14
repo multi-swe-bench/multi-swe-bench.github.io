@@ -140,13 +140,28 @@
         </div>
 
         <p class="text-content">
+
+          <span v-if="currentMode === 'Lite'">
+            - <span style="color:var(--dark_accent_color);"><b>📦 Multi-SWE-bench mini</b></span> denotes a subset containing 400 instances.
+            <br>
+          </span>
+           <span v-if="currentMode === 'Flash'">
+            - <span style="color:var(--dark_accent_color);"><b>🚀 Multi-SWE-bench flash</b></span> denotes a carefully selected subset of 300 instances for fast evaluation.
+            <br>
+          </span>
+
           <span v-if="currentMode === 'Full'">
           - <span style="color:var(--dark_accent_color);"><b>% Resolved</b></span> denotes the proportion of successfully solved instances per language (Python: <b>500</b>, Java: <b>128</b>, TypeScript: <b>224</b>, JavaScript: <b>356</b>, Go: <b>428</b>, Rust: <b>239</b>, C: <b>128</b>, C++: <b>129</b>).
         <b>Overall</b> includes all instances for each language, while <b>Easy</b>, <b>Medium</b>, and <b>Hard</b> correspond to subsets categorized by difficulty level.
           <br>
         </span>
-          <span v-else>
+          <span v-if="currentMode === 'Lite'">
             - <span style="color:var(--dark_accent_color);"><b>% Resolved</b></span> denotes the proportion of successfully solved instances per language (<b>50</b> instances per language, across <b>8</b> languages).
+            <b>Overall</b> includes all instances for each language, while <b>Easy</b>, <b>Medium</b>, and <b>Hard</b> correspond to subsets categorized by difficulty level.
+            <br>
+          </span>
+           <span v-if="currentMode === 'Flash'">
+            - <span style="color:var(--dark_accent_color);"><b>% Resolved</b></span> denotes the proportion of successfully solved instances per language.
             <b>Overall</b> includes all instances for each language, while <b>Easy</b>, <b>Medium</b>, and <b>Hard</b> correspond to subsets categorized by difficulty level.
             <br>
           </span>
@@ -182,7 +197,7 @@ const { allLeaderboards, selectedCategory, leaderboard, languageData, datasetRes
 let GITHUB_URL = 'https://github.com/multi-swe-bench/experiments/tree/main/evaluation'
 let LeaderboardName = 'Leaderboard'
 // 模式：默认是 full
-const currentMode = ref<'Full' | 'Lite'>('Full')
+const currentMode = ref<'Full' | 'Lite' | 'Flash'>('Full')
 
 // 数据源映射
 const urls = {
