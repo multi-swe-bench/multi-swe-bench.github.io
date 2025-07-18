@@ -12,15 +12,6 @@
             Multi-SWE-bench&nbsp;
         </button>
         <button
-            @click="switchLeaderboard('Lite')"
-          class="outline teaser swebl"
-          style="flex-direction: row; display: flex; justify-content: center; align-items: center; width: 15em;">
-          <img
-            src="../img/logo-v3.svg"
-            style="height: 1.3em; margin-right: 0.4em; margin-bottom: 0.1em; background-color: var(--dark_accent_color);" />
-            Multi-SWE-bench mini&nbsp;
-        </button>
-      <button
             @click="switchLeaderboard('Flash')"
           class="outline teaser sweble"
           style="flex-direction: row; display: flex; justify-content: center; align-items: center; width: 15em;">
@@ -28,6 +19,15 @@
             src="../img/logo-v3.svg"
             style="height: 1.3em; margin-right: 0.4em; margin-bottom: 0.1em;" />
             Multi-SWE-bench flash&nbsp;
+        </button>
+        <button
+            @click="switchLeaderboard('Lite')"
+          class="outline teaser swebl"
+          style="flex-direction: row; display: flex; justify-content: center; align-items: center; width: 15em;">
+          <img
+            src="../img/logo-v3.svg"
+            style="height: 1.3em; margin-right: 0.4em; margin-bottom: 0.1em; background-color: var(--dark_accent_color);" />
+            Multi-SWE-bench mini&nbsp;
         </button>
     </div>
     <div class="content-wrapper">
